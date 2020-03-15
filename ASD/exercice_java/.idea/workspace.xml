@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fef2729-979c-4525-8ad2-7d1bcc46e6d5" name="Default Changelist" comment="" />
+    <list default="true" id="6fef2729-979c-4525-8ad2-7d1bcc46e6d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/td6/part2/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/part3/MergeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/part4/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/exercice_java/META-INF/exercice_java.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree$BSTiterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree$BSTiterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree$BinaryNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree$BinaryNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/exercice_java/td4/part1_2_3/BinarySearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/part1_2_3/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/part1_2_3/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td6/SlowInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/SlowInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td6/TestSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/TestSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td6/part1/SimpleSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/part1/SimpleSorting.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +24,18 @@
   <component name="FavoritesManager">
     <favorites_list name="exercice_java" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1WWW0dXWQteF6dXDdJnc7WkLJeP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -18,9 +43,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ps6/2019-2020-ps6-backend-starter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -30,7 +56,19 @@
       <recent name="td5.part4" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinarySearchTree">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TestSort">
     <configuration name="BinaryNode (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="td3.part1_2.BinaryNode" />
       <module name="exercice_java" />
@@ -70,19 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExpressionTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="td3.part3.ExpressionTree" />
-      <module name="exercice_java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="td3.part3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestBinaryNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="td3.part1_2.TestBinaryNode" />
       <module name="exercice_java" />
@@ -96,34 +121,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="td6.TestSort" />
+      <module name="exercice_java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="td6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.ExpressionTree" />
       <item itemvalue="Application.TestBinaryNode" />
       <item itemvalue="Application.BinaryNode" />
       <item itemvalue="Application.BinaryNode (1)" />
       <item itemvalue="Application.BinarySearchTree" />
+      <item itemvalue="Application.TestSort" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestSort" />
         <item itemvalue="Application.BinarySearchTree" />
         <item itemvalue="Application.BinaryNode" />
         <item itemvalue="Application.BinaryNode (1)" />
         <item itemvalue="Application.TestBinaryNode" />
-        <item itemvalue="Application.ExpressionTree" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -163,6 +189,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="707" y="357" width="563" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579269592842">

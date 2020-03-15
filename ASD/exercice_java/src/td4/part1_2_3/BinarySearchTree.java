@@ -189,32 +189,28 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
      * @param min the minimum value left in the tree
      */
     public void removeLessThan(AnyType min) {
-        removeLessThan(root,min);
+        root = removeLessThan(root,min);
     }
 
     private BinaryNode<AnyType> removeLessThan(BinaryNode<AnyType> t, AnyType min) {
-        if (t==null) return null;
-        /*
-        if (t.left==null){
-            t = remove(t.element,t);
-            return t;
-        }
-
-         */
-
-
+        /*if (t==null) return null;
         if (t.element.compareTo(min)<0){
             t = removeLessThan(remove(t.element,t),min);
-            return t;
         }
-        /*
-        if (findMin(t).element.compareTo(min)<0){
-            t = remove(t.element,t);
-    	    t.left = removeLessThan(t.left,min);
+        else if (findMin(t).element.compareTo(min)<0){
+            t = removeLessThan(remove(t.left.element,t),min);
         }
+        return t;*/
 
-         */
-    	return t;
+        if (t == null)
+            return null;
+        else if (t.element.compareTo(min) < 0) {
+            return removeLessThan(t.right, min);
+        } else {
+            t.left = removeLessThan(t.left, min);
+            t.right = removeLessThan(t.right, min);
+        }
+        return t;
     }
 
     /////////////// removeGreaterThan
@@ -225,15 +221,16 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
      * @param max the maximum value left in the tree
      */
     public void removeGreaterThan(AnyType max) {
-        removeGreaterThan(root,max);
+        root = removeGreaterThan(root,max);
     }
 
     private BinaryNode<AnyType> removeGreaterThan(BinaryNode<AnyType> t, AnyType max) {
-        if (findMax(t).element.compareTo(max)<0){
-            t.right = removeGreaterThan(t.right,max);
+        if (t==null) return null;
+        if (t.element.compareTo(max)>0){
+            t = removeGreaterThan(remove(t.element,t),max);
         }
-        if (t.left==null){
-            t = remove(t.element,t);
+        else if (findMax(t).element.compareTo(max)>0){
+            t = removeGreaterThan(remove(t.right.element,t),max);
         }
         return t;
     }
@@ -246,11 +243,18 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
      * @return the sorted list of all the elements of the tree
      */
     public List<AnyType> toSortedList() {
-    	return null;
+        List<AnyType> list = new ArrayList<>();
+        toSortedList(root,list);
+    	return list;
     }
 
     private void toSortedList(BinaryNode<AnyType> t, List<AnyType> list) {
-
+        if (t==null){
+            return;
+        }
+        AnyType min = findMin(t).element;
+        list.add(min);
+        toSortedList(remove(min,t),list);
     }
 
     /////////////// sorted list to binary search tree
@@ -261,10 +265,18 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
      * @param list a sorted (increasing) list of elements
      */
     public BinarySearchTree(List<AnyType> list) {
-
+        root = makeTree(list,0,list.size()-1);
     }
 
     private BinaryNode<AnyType> makeTree(List<AnyType> list, int i, int j) {
+        if (list.isEmpty()){
+            return null;
+        }
+        BinaryNode<AnyType> binaryNode = new BinaryNode<AnyType>(null);
+        int m = (i+j)/2;
+        binaryNode.element=list.get(m);
+        binaryNode.left = makeTree(list,m-1,j);
+        binaryNode.right = makeTree(list,m+1,j);
     	return null;
     }
 
@@ -292,7 +304,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
 		 * The elements are enumerated in increasing order.
 		 */
 		BSTiterator(BinaryNode<AnyType> n) {
-
+		    n = root;
 		}
 
 		/**
@@ -300,7 +312,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
 		 * iterator
 		 */
 		public boolean hasNext() {
-			return false;
+			return stack.peek()==null;
 		}
 
 		/**
@@ -402,10 +414,12 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
         System.out.println(bst.findMax());
 
     	 */
-        bst.removeLessThan(70);
-        //bst.remove(50);
-        //bst.display();
-        //bst.remove(40);
-    	bst.display();
+        //bst.removeLessThan(70);
+        //bst.removeGreaterThan(50);
+        System.out.println(bst.toSortedList());
+        BinarySearchTree<Integer> bst2 = new BinarySearchTree<Integer>(bst.toSortedList());
+        bst2.display();
+
+        bst.display();
     }
 }

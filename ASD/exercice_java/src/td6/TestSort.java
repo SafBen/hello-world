@@ -1,7 +1,10 @@
-package ads.lab6;
+package td6;
 
-import ads.util.TestClass;
-import ads.util.SlowInteger;
+import td1.TestClass;
+import td6.part1.SimpleSorting;
+import td6.part2.HeapSort;
+import td6.part3.MergeSort;
+import td6.part4.QuickSort;
 
 /**
  * A class for interactive testing of sorting algorithms
@@ -9,7 +12,7 @@ import ads.util.SlowInteger;
 public class TestSort extends TestClass<TestSort> {
 	
 	// the size of the array
-	private static final int SIZE = 250;
+	private static final int SIZE = 10;
 	private SlowInteger[] array;
 	private SlowInteger[] unsorted;
 	
@@ -63,6 +66,7 @@ public class TestSort extends TestClass<TestSort> {
 	}
 	
 	public void insertionsort() {
+		showArray();
 		long startTime = System.nanoTime();
 		SimpleSorting.insertion(array);
 		long endTime = System.nanoTime();
@@ -94,6 +98,7 @@ public class TestSort extends TestClass<TestSort> {
 	
     public static void main(String[] args) {
     	TestSort test = new TestSort();
-        test.tester();
+        //test.tester();
+		test.insertionsort();
     }
 }

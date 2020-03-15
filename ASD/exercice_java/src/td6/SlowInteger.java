@@ -1,4 +1,4 @@
-package ads.lab6;
+package td6;
 
 /**
  * A class for integer with slow comparison function
