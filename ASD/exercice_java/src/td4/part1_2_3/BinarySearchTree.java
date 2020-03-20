@@ -414,11 +414,11 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> imple
         System.out.println(bst.findMax());
 
     	 */
-        //bst.removeLessThan(70);
+        bst.removeLessThan(70);
         //bst.removeGreaterThan(50);
         System.out.println(bst.toSortedList());
-        BinarySearchTree<Integer> bst2 = new BinarySearchTree<Integer>(bst.toSortedList());
-        bst2.display();
+        //BinarySearchTree<Integer> bst2 = new BinarySearchTree<Integer>(bst.toSortedList());
+        //bst2.display();
 
         bst.display();
     }
