@@ -1,6 +1,7 @@
 package td6;
 
 import td1.TestClass;
+import td5.part2_3.EmptyHeapException;
 import td6.part1.SimpleSorting;
 import td6.part2.HeapSort;
 import td6.part3.MergeSort;
@@ -12,7 +13,7 @@ import td6.part4.QuickSort;
 public class TestSort extends TestClass<TestSort> {
 	
 	// the size of the array
-	private static final int SIZE = 10;
+	private static final int SIZE = 30;
 	private SlowInteger[] array;
 	private SlowInteger[] unsorted;
 	
@@ -29,7 +30,7 @@ public class TestSort extends TestClass<TestSort> {
 		newArray();
 	}
 	
-	public void heapsort() {
+	public void heapsort() throws EmptyHeapException {
 		long startTime = System.nanoTime();
 		HeapSort.sort(array);
 		long endTime = System.nanoTime();
@@ -96,9 +97,9 @@ public class TestSort extends TestClass<TestSort> {
 		}
 	}
 	
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EmptyHeapException {
     	TestSort test = new TestSort();
         //test.tester();
-		test.insertionsort();
+		test.mergesort();
     }
 }
