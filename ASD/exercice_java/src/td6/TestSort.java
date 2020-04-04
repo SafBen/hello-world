@@ -49,8 +49,9 @@ public class TestSort extends TestClass<TestSort> {
 	}
 	
 	public void quicksort() {
+		showArray();
 		long startTime = System.nanoTime();
-		QuickSort.sort(array);
+		QuickSort.sort(array,0,array.length-2);
 		long endTime = System.nanoTime();
 		showArray();
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
@@ -100,6 +101,6 @@ public class TestSort extends TestClass<TestSort> {
     public static void main(String[] args) throws EmptyHeapException {
     	TestSort test = new TestSort();
         //test.tester();
-		test.mergesort();
+		test.quicksort();
     }
 }

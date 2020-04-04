@@ -1,25 +1,21 @@
 package td6.part3;
 
 
+import td6.part2.HeapSort;
+
 public class TriFusion {
-    private static final int SIZE = 20;
+    private static final int SIZE = 2000;
 
     private static int[] somme(int[] t1, int[] t2) {
         int[] sum = new int[t1.length+t2.length];
-        for (int i = 0; i < t1.length; i++) {
-            sum[i]=t1[i];
-        }
-        for (int i = 0; i < t2.length; i++) {
-            sum[i+t1.length]=t2[i];
-        }
+        System.arraycopy(t1, 0, sum, 0, t1.length);
+        System.arraycopy(t2, 0, sum, t1.length, t2.length);
         return sum;
     }
 
     private static int[] tab(int[] t, int debut, int fin) {
         int[] array = new int[fin - debut];
-        for (int i = 0; i < fin-debut; i++) {
-            array[i]=t[i+debut];
-        }
+        if (fin - debut >= 0) System.arraycopy(t, debut, array, 0, fin - debut);
         return array;
     }
 
@@ -64,7 +60,10 @@ public class TriFusion {
         tri.newArray(array,unsorted);
 
         tri.showArray(array);
+        long startTime = System.nanoTime();
         int[] fusion = trifusion(array);
+        long endTime = System.nanoTime();
+        System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
         tri.showArray(fusion);
 
     }

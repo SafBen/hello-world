@@ -4,12 +4,14 @@ import td5.part2_3.EmptyHeapException;
 import td6.SlowInteger;
 import td6.TestSort;
 
+import java.util.Arrays;
+
 /**
  * A class for the recursive merge sort algorithm.
  */
 public class MergeSort {
 
-    private static final int SIZE = 5;
+    private static final int SIZE = 10;
 
 
     /**
@@ -33,7 +35,7 @@ public class MergeSort {
         int mid = (lo+hi)/2;
         //sort(array,lo,mid);
         //sort(array,mid+1,hi);
-        merge(array,lo,mid,hi);
+        //merge(array,lo,mid,hi);
     }
 
     /**
@@ -42,19 +44,38 @@ public class MergeSort {
      * Precondition: array[lo, mid] and array[mid+1, hi] are sorted
      * Complexity: THETA( n ) where n = hi - lo + 1
      */
-    private static <AnyType extends Comparable<AnyType>> void merge(AnyType[] array, int lo, int mid, int hi) {
+    private static <AnyType extends Comparable<AnyType>> void merge(AnyType[] array, AnyType[] tmp, int lo, int mid, int hi) {
         int i=lo;
         int j=mid+1;
         int k=0;
-        AnyType[] tmp = (AnyType[]) new Comparable[array.length];
-        while (i<mid && j<hi){
+        while (i<=mid && j<=hi){
             if (array[i].compareTo(array[j])<0){
-                tmp[k]=array[i++];
+                tmp[k]=array[i];
+                i++;
             }
             else{
-                tmp[k]=array[j++];
+                tmp[k]=array[j];
+                j++;
             }
             k++;
+        }
+        if (i==mid+1){
+            while (j<=hi){
+                tmp[k]=array[j];
+                j++;
+                k++;
+            }
+        }
+        else if (j==hi+1){
+            while (i<=mid){
+                tmp[k]=array[i];
+                i++;
+                k++;
+            }
+        }
+
+        for (int l = lo; l <= hi; l++) {
+            array[l]=tmp[l];
         }
     }
 
@@ -63,24 +84,28 @@ public class MergeSort {
      * Complexity: THETA( n ) where n = hi - lo + 1
      */
     private static <AnyType> void transfer(AnyType[] tmp, AnyType[] array, int lo, int hi) {
-
+        for (int i = lo; i <= hi; i++) {
+            array[i]=tmp[i];
+        }
     }
 
+    @SuppressWarnings("unchecked")
     private static <AnyType> AnyType[] somme(AnyType[] t1, AnyType[] t2) {
         AnyType[] sum = (AnyType[]) new Comparable[t1.length+t2.length];
         for (int i = 0; i < t1.length; i++) {
             sum[i]=t1[i];
         }
-        for (int i = t1.length; i < t2.length+t1.length; i++) {
-            sum[i]=t2[i];
+        for (int i = 0; i < t2.length; i++) {
+            sum[i+t1.length]=t2[i];
         }
         return sum;
     }
 
+    @SuppressWarnings("unchecked")
     private static <AnyType> AnyType[] tab(AnyType[] t, int debut, int fin) {
-        AnyType[] array = (AnyType[]) new Comparable[debut + fin];
-        for (int i = debut; i < fin; i++) {
-            array[i]=t[i];
+        AnyType[] array = (AnyType[]) new Comparable[fin - debut];
+        for (int i = 0; i < fin-debut; i++) {
+            array[i]=t[i+debut];
         }
         return array;
     }
@@ -89,9 +114,9 @@ public class MergeSort {
         if (t1.length==0) return t2;
         if (t2.length==0) return t1;
         if (t1[0].compareTo(t2[0]) < 0){
-            return (AnyType[]) somme(tab(t1,0,1),fusion(tab(t1,1,t1.length),t2));
+            return somme(tab(t1,0,1),fusion(tab(t1,1,t1.length),t2));
         }
-        else return (AnyType[]) somme(tab(t2,0,1),fusion(t1,tab(t2,1,t2.length)));
+        else return somme(tab(t2,0,1),fusion(t1,tab(t2,1,t2.length)));
     }
 
     private static <AnyType extends Comparable<AnyType>> AnyType[] trifusion(AnyType[] t) {
@@ -115,18 +140,39 @@ public class MergeSort {
         }
     }
 
-    public static void main(String[] args) {
+    @SuppressWarnings("unchecked")
+    public static <Anytype> void main(String[] args) {
         SlowInteger[] array;
         SlowInteger[] unsorted;
 
         array = new SlowInteger[SIZE];
         unsorted = new SlowInteger[SIZE];
 
+
+        for ( int i = 0; i < array.length/2; i++ ) {
+            array[i] = new SlowInteger(6*i);
+        }
+        for ( int i = array.length/2; i < array.length; i++ ) {
+            array[i] = new SlowInteger(3*i);
+        }
+        System.out.println(array[1].compareTo(array[3]));
+        System.out.println(array[3].compareTo(array[1]));
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(unsorted));
+        merge(array,unsorted,0,array.length/2,array.length-1);
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(unsorted));
+
+        /*
         MergeSort mergeSort = new MergeSort();
         mergeSort.newArray(array,unsorted);
-        mergeSort.showArray(array);
-        trifusion(array);
-        mergeSort.showArray(array);
+        mergeSort.showArray(unsorted);
+
+        mergeSort.showArray((SlowInteger[]) trifusion(unsorted));
+        mergeSort.showArray(tab(array,0,array.length-1));
+
+         */
+
 
     }
 
@@ -145,6 +191,6 @@ return [T2[0]]+fusion(T1,T2[1 :])
 def trifusion(T) :
 if len(T)<=1 : return T
 T1=[T[x] for x in range(len(T)//2)]
-T2=[T[x] for x in range(len(T)//2,len(T))]
+T2=[T[x] for x in ange(len(T)//2,len(T))]
 return fusion(trifusion(T1),trifusion(T2))
  */
