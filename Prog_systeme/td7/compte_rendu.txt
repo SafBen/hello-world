@@ -1,0 +1,27 @@
+Programmation système TD7 - Safwane Benidir
+
+
+Exercice 1
+
+1. À l'exécution de la commande xeyes le terminal devient indisponible pour l'exécution d'une nouvelle commande
+
+2. Ctrl-Z permet de suspendre l'exécution du programme sans l'arrêter complètement (suspension douce).
+
+3. La commande bg permet de reprendre l'exécution du programme mais en background. Ainsi le terminal est de nouveau disponible pour entrer de nouvelles commandes (comme par exemple la commande xeyes une nouvelle fois).
+
+4. La commande ps permet de voir le pid des processus exécutés depuis l'ouverture du terminal.
+
+5. La commande kill -SIGSTOP p permet de stopper l'exécution du programme qui a pour pid p. Cependant le programme n'est pas arrêté. kill -SIGSTOP p agit comme Ctrl-Z.
+
+6. Le signal pour continuer est SIDCONT et a pour numéro 18. Ainsi
+kill -18 pid_xeyes permet de reprendre l'exécution du programme comme avec la commande bg.
+
+7. Pour terminer la commande xeyes sans le pid mais avec le nom de la commande on peut utiliser la commande : killall nom_commande donc ici killall xeyes va arrêter le ou les processus xeyes.
+
+
+Exercice 4
+
+En ajoutant sleep(5) on pourrait s'attendre à ce que le programme ne puisse se terminer qu'après avoir attendu 5 secondes. Or en tapant Ctrl-C le processus se termine avant. En réalité sleep est implémenté avec le signal SIGALRM, lorsque l'on tape Ctrl-C, le signal est attrapé et sleep est interrompu et donc n'attend pas pendant les 5 secondes.
+
+
+Exercice 5
