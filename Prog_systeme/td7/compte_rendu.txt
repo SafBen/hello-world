@@ -25,3 +25,14 @@ En ajoutant sleep(5) on pourrait s'attendre à ce que le programme ne puisse se 
 
 
 Exercice 5
+
+Avec l'option -ansi on constate que le fichier tst_sigaction.exe ne compile plus car il utilise la norme Posix. Pas de changement du côté du handler.
+
+
+Exercice 6
+
+Certaines fonctions proposées par Posix permettent de traiter différemment les signaux. On peut les ignorer complètement, capturer le signal et faire une autre action en fonction du signal attrapé. Dans ces deux cas le sleep n'est pas interrompu.
+On peut aussi capturer le signal avec un handler vide ou sans handler mais dans ce cas le sleep est interrompu.
+
+
+

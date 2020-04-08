@@ -9,7 +9,7 @@
 # Compilateur et options
 # ----------------------
 CC=gcc
-CFLAGS=-std=gnu99 -Wall -Wextra -g 
+CFLAGS=-std=gnu99 -Wall -Wextra -g
 
 # Pour tester la compilation avec la norme Ansi C des signaux
 # CFLAGS=-Wall -Wextra -ansi -g
