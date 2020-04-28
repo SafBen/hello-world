@@ -1,64 +1,39 @@
-#---------------------------------------------------------------------------------
-# Primitives de POSIX.1 : Manipulations de processus
-#---------------------------------------------------------------------------------
+#
+#  Makefile 	-- Makefile pour le TD système sur malloc
+#
+# Copyright © 2020 Erick Gallesio - Polytech Nice-Sophia <eg@unice.fr>
+#
+#           Author: Erick Gallesio [eg@unice.fr]
+#    Creation date:  8-Apr-2020 16:59
+# Last file update: 16-Apr-2020 14:02 (lavirott)
+#
 
-#---------------------------------------------------------------------------------
-# Variables
-#---------------------------------------------------------------------------------
+CC=gcc
+CFLAGS=-Wall -Wextra -std=gnu99 -g -Wno-unused-variable
 
-# Compilateur et options
-# ----------------------
-CC      = gcc
-CFLAGS  = -g -Wall -Wextra -Wno-unused-variable -std=gnu99 -fpic #-DMALLOC_DBG
+# Les sources C (i.e. tous les fichiers C sauf mymalloc.c)
+SRC=$(sort $(filter-out mymalloc.c,$(wildcard *.c)))
 
-DYN_LIB = libmalloc.so libmymalloc.so
-EXE     = test-simple-malloc.exe test-simple-mymalloc.exe test-malloc.exe test-mymalloc.exe
+# Les fichiers à produire
+EXE=$(SRC:.c=.exe)
+HTML=$(EXE:.exe=.html)
 
-HTML    = $(EXE:.exe=.html)
+# Règles implicites surles exécutables
+%.exe: %.c mymalloc.o
+	$(CC) $(CFLAGS) -o $@ $*.c mymalloc.o
 
-#---------------------------------------------------------------------------------
-# Cibles principales
-#---------------------------------------------------------------------------------
+# Règles implicites sur les fichier HTML produits
+%.html: %.exe
+	@chmod a+x ./villoc/to-html
+	@chmod a+x ./villoc/villoc.py
+	./villoc/to-html $?
 
-all: $(DYN_LIB) $(EXE)
+# ======================================================================
+all:  $(EXE) $(HTML)
 
-lib%.so: %.o
-	$(CC) $(CFLAGS) -shared -Wl,-soname,$@ $^ -o $@
-
-test-mymalloc.c: test-malloc.c
-	cp test-malloc.c test-mymalloc.c
-
-test-simple-mymalloc.c: test-simple-malloc.c
-	cp test-simple-malloc.c test-simple-mymalloc.c
-
-test-%.exe: test-%.o lib%.so
-	$(CC) $(CFLAGS) -o $@ $^
-
-test-simple-%.exe: test-simple-%.o lib%.so
-	$(CC) $(CFLAGS) -o $@ $^
-
-%.exe: %.o
-	$(CC) $(CFLAGS) -o $@ $^
-
-# Nettoyages
-# ----------
-
-# Nettoyage léger
 clean:
-	@rm -f \#* *.o $(HTML) $(DYN_LIB) $(EXE)
+	rm -f $(LIB) $(EXE) $(HTML) *.o *~
 
-# Nettoyage en profondeur
-mrproper: clean
-	@rm -rf *~ *.html test-mymalloc.c test-simple-mymalloc.c
+install:
 
-# Tests
-# ----------
-
-test: SHELL:=/bin/bash
-test: $(EXE) $(HTML)
-
-villoc/villoc.py:
-	@chmod 755 villoc/villoc.py
-
-%.html: %.exe villoc/villoc.py
-	@LD_LIBRARY_PATH=. ltrace -S ./$< |& villoc/villoc.py --raw - $@
+distclean: clean
