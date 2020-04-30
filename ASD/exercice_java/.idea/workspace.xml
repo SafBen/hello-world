@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50988964-bc65-474a-ac14-fe01985b8104" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/td5/Correction/BinaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td5/Correction/BinaryHeap.java" afterDir="false" />
-    </list>
+    <list default="true" id="50988964-bc65-474a-ac14-fe01985b8104" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,11 +43,24 @@
       <workItem from="1586517497753" duration="4505000" />
       <workItem from="1587381241645" duration="79000" />
       <workItem from="1588058402154" duration="934000" />
+      <workItem from="1588241001957" duration="316000" />
     </task>
+    <task id="LOCAL-00001" summary="asd merge">
+      <created>1588241188788</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588241188788</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="asd merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="asd merge" />
   </component>
   <component name="WindowStateProjectService">
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586513155817">
