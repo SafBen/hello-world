@@ -1,0 +1,86 @@
+Programmation procédurale TD3 - Safwane Benidir
+
+
+Exercice 1
+--------------------------------------------------------------------------
+----------------------------------  CODE  --------------------------------
+--------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int P=10;
+
+void print(int n){
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d\n",i);
+    }
+    
+}
+int main(){
+    for (int i = 0; i < P; i++)
+    {
+        switch (fork()) {
+        case -1 :       // Cas d'erreur
+            perror("fork");
+            exit(1);
+        case 0 :        // Processus fils
+            print(P);   // On fait l'affichage
+            exit(1);    // On sort de la fonction pour éviter les duplications
+        default :
+            break;
+        }
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------
+Le père crée 10 fils, mais aucun d'entre eux ne doit créer d'autres fils.
+Le exit permet ainsi de sortir de la boucle sinon le fils va continuer à boucler 10-1=9 fois et va crée d'autres fils, ce qui n'est pas voulu.
+
+
+Exercice 2
+
+On lance dans deux terminals séparés:
+./multiple_fork.exe > texte.txt
+et
+ps aux | grep multiple_fork.exe
+On voit alors plusieurs processus identiques avec seulement le pid qui change.
+On peut en conclure que le programme a bien été dupliqué.
+
+
+Exercice 3
+
+En mettant le sleep dans le case du père (donc default) à la place du fils on voit que le processus fils apprait avec Z avec la commande "ps aux | grep zombie.exe" qui indique que c'est un processus zombie.
+
+
+Exercice 4
+
+On remet le sleep pour le fils et on affiche le pid du père. À la première itération celui-ci est inchangé puis le pid du père passe à 1. En effet le processus père se termine avant car il n'y a pas de sleep
+
+
+Exercice 5
+
+- execXX() ne change pas le pid :
+	On affiche le pid avant execXX()
+	Dans le programme exécuté par execXX() on affiche le pid
+	Les 2 pid sont identiques
+
+- On ne continue le code qui est écrit après un execXX() :
+	On réalise un affichage (printf) après le execXX()
+	À l'exécution le printf après le execXX() n'affichage rien (il n'est pas exécuté
+
+- après un fork() le fils hérite des buffers du père, pas après un execXX() :
+	On réalise 2 affichages avant le execXX()
+	D'abord avec un saut de ligne puis sans saut de ligne
+	Avec le saut de ligne le buffer est vidé donc il y a un affichage
+	Sans le saut de ligne le buffer n'est pas vidé, le programme exécute le execXX() et réalise le printf() de l'autre programme
+	Le buffer est alors initialisé à vide par le nouveau programme et le contenu du buffer est alors perdu sans qu'il soit affiché
+
+
+Exercice 6
+
+Pour réaliser les commandes who puis ls -ls on fait un fork(), ce processus va réaliser la commande who à l'aide de execlp("who","who",NULL);
+Puis dans le processus père on fait un wait() pour attendre que le processus fils termine avant de faire la 2e commande à savoir execlp("ls","ls","-ls",NULL);

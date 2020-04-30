@@ -1,0 +1,72 @@
+Safwane Benidir
+
+Programmation système : TD2
+
+
+Exercice 1
+
+Différentes implémentation de tri sont réalisées dans différents fichiers .c dont la signature est définie dans un .h (sort.h) permettant de pouvoir rajouter d'autres fonctions de tri facilement.
+
+
+Exercice 2
+
+tri_bubble.exe utilise 3 bibliothèques partagées:
+linux-vdso.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+
+
+Exercice 3
+
+Pour rendre le programme indépendant de toutes bibliothèques il faut ajouter l'option -static pour compiler:
+
+tri_%-staticExe.exe: main.o %.o timer.o utils.o unused.o
+	$(CC) -static -o $@ $^
+
+De cette manière:
+
+ldd tri_bubble-staticExe.exe
+
+renvoie "n'est pas un exécutable dynamique", ce fichier est alors indépendant de toutes bibliothèques.
+
+
+Exercice 4
+
+On crée une bibliothèque statique avec les commandes:
+
+ar -r libTri_bubble-staticLib.a bubble.o unused.o
+ranlib libTri_bubble-staticLib.a
+
+Les résultats d'exécution sont bien identiques et prennent le même temps.
+Le fichier staticExe est plus gros que le fichier basicExe car il contient le code des bibliothèques chargées donc plus de texte et également beaucoup de données non initialisées.
+
+Avec les commandes:
+
+nm tri_bubble-staticLib.exe | grep 'foo'
+nm tri_bubble-staticLib.exe | grep 'bar'
+
+On voit que les fonctions foo et bar de unused ne sont pas présentent dans l'exécutable tri_bubble-staticLib.exe qui utilise une bibliothèque car ce programme ne les utilise pas alors que pour le fichier tri_bubble-staticExe.exe on n'utilise pas de bibliothèque donc tout le code est ajouté au fichier.
+
+
+Exercice 5
+
+Pour créer une bibliothèque dynamique on compile d'abord chaque fichier source .c avec l'option -fpic:
+
+$(CC) -c -fpic -std=c99 -Wall bubble.c
+$(CC) -c -fpic -std=c99 -Wall insertion.c
+$(CC) -c -fpic -std=c99 -Wall merge.c
+$(CC) -c -fpic -std=c99 -Wall quick.c
+
+Puis on créer la bibliothèque:
+
+$(CC) -shared -o $@ $^
+
+
+Exercice 6
+
+On supprime le premier commentaire dans la variable EXE du Makefile
+On lance make clean pour supprimer tout ce qui a été fait et ainsi refaire toute la compilation d'un coup
+On lance make test
+
+Tout est bien compilé pour tout les programme de tri
+Tout est exécuté sans problème
