@@ -78,6 +78,119 @@ p {
 </head>
 <body>
 <div class="timeline">
+<div class="state ">
+<div class="line" style="">
+<div class="block brk" style="width: 800px; background-color: rgb(160, 160, 160);;"><br />800&nbsp;(0x320)</div>
+</div>
+<div class="log"><p>SYS_brk(0x2422320) = 0x2422320</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(223, 108, 75);;"><br />128&nbsp;(0x80)</div>
+</div>
+<div class="log"><p>mymalloc(0x80) = 0x2422010</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(223, 108, 75);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(144, 194, 150);;"><br />256&nbsp;(0x100)</div>
+</div>
+<div class="log"><p>mymalloc(0x100) = 0x24220a0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(223, 108, 75);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(144, 194, 150);;"><br />256&nbsp;(0x100)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(198, 216, 151);;"><br />128&nbsp;(0x80)</div>
+</div>
+<div class="log"><p>mymalloc(0x80) = 0x24221b0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(223, 108, 75);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(144, 194, 150);;"><br />256&nbsp;(0x100)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(198, 216, 151);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 512px; background-color: rgb(122, 190, 67);;"><br />512&nbsp;(0x200)</div>
+</div>
+<div class="log"><p>mymalloc(0x200) = 0x2422240</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(223, 108, 75);;"><br />128&nbsp;(0x80)</div>
+<div class="block empty" style="width: 272px; ;"><br />272&nbsp;(0x110)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(198, 216, 151);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 512px; background-color: rgb(122, 190, 67);;"><br />512&nbsp;(0x200)</div>
+</div>
+<div class="log"><p>myfree(0x24220a0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(223, 108, 75);;"><br />256&nbsp;(0x100)</div>
+<div class="block empty" style="width: 144px; ;"><br />144&nbsp;(0x90)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(198, 216, 151);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 512px; background-color: rgb(122, 190, 67);;"><br />512&nbsp;(0x200)</div>
+</div>
+<div class="log"><p>myrealloc(0x2422010, 0x100) = 0x2422010</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(223, 108, 75);;"><br />256&nbsp;(0x100)</div>
+<div class="block empty" style="width: 144px; ;"><br />144&nbsp;(0x90)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 128px; background-color: rgb(198, 216, 151);;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 1024px; background-color: rgb(122, 190, 67);;"><br />1024&nbsp;(0x400)</div>
+</div>
+<div class="log"><p>myrealloc(0x2422240, 0x400) = 0x2422240</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(223, 108, 75);;"><br />256&nbsp;(0x100)</div>
+<div class="block empty" style="width: 144px; ;"><br />144&nbsp;(0x90)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(198, 216, 151);;"><br />256&nbsp;(0x100)</div>
+</div>
+<div class="line" style="">
+<div class="block empty" style="width: 432px; ;"><br /></div>
+<div class="block empty" style="width: 128px; ;"><br />128&nbsp;(0x80)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 1024px; background-color: rgb(122, 190, 67);;"><br />1024&nbsp;(0x400)</div>
+</div>
+<div class="log"><p>myrealloc(0x24221b0, 0x100) = 0x24221b0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 544px; background-color: rgb(223, 108, 75);;"><br />544&nbsp;(0x220)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 1024px; background-color: rgb(122, 190, 67);;"><br />1024&nbsp;(0x400)</div>
+</div>
+<div class="line" style="">
+<div class="block empty" style="width: 16px; ;"><br /></div>
+<div class="block empty" style="width: 400px; ;"><br />400&nbsp;(0x190)</div>
+<div class="block header" style="width: 16px; background-color: rgb(224, 224, 224);;">H<br />16&nbsp;(0x10)</div>
+<div class="block normal" style="width: 256px; background-color: rgb(198, 216, 151);;"><br />256&nbsp;(0x100)</div>
+</div>
+<div class="log"><p>myrealloc(0x2422010, 0x220) = 0x2422010</p></div>
+</div>
 </div>
 </body>
 </html>

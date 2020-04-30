@@ -1,0 +1,12 @@
+javac -h . HelloWorld.java
+
+
+g++ -c -fpic -Wall HelloWorld.cpp -I "/home/user/Documents/intellij/idea-IU-193.6911.18/jbr/include" -I "/home/user/Documents/intellij/idea-IU-193.6911.18/jbr/include/linux"
+–I Reps_de_jni -I Reps_de_jni_(win32 ou linux)
+
+g++ -Wl,-soname,libHelloWorld.so -shared -o libHelloWorld.so HelloWorld.o
+g++ -Wl,-soname,libMessageScanner.so -shared -o libMessageScanner.so MessageScanner.o
+
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+export LD_LIBRARY_PATH

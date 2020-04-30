@@ -11,6 +11,8 @@
 #include <unistd.h>
 #include <string.h>
 #include "mymalloc.h"
+#include <stdbool.h>
+
 
 // ======================================================================
 //
@@ -107,147 +109,116 @@ static Header base = {{0, &base}}; /* Le pointeur de départ: aucune zone allou�
 static Header *freep = &base;      /* freep pointe sur la 1ère zone libre */
 
 /* ====================================================================== */
-
+size_t max(size_t a, size_t b)
+{
+  return a >= b ? a : b;
+}
 /* Utilisé si on n'a pas trouvé assez de place */
 static void *allocate_core(size_t size)
 {
-  if (size <= MIN_ALLOCATION)
+  size_t max_size = max((BLOCKS_TO_ALLOCATE(size)) * HEADER_SIZE, MIN_ALLOCATION * HEADER_SIZE);
+  Header *new_data = mysbrk(max_size);
+  if (new_data == ((void *)-1))
   {
-    sbrk(BLOCKS_TO_ALLOCATE(MIN_ALLOCATION));
+    return NULL;
   }
-  else
-  {
-    sbrk(BLOCKS_TO_ALLOCATE(size));
-  }
-
-  myfree(freep);
-  // A COMPLETER
-  // fait un appel à sbrk pour allouer la mémoire et
-  // un appel à myfree pour chaîner la zone allouée avec la liste freep
+  SIZE(new_data) = (max_size);
+  NEXT(new_data) = freep;
+  internal_free(new_data + 1);
   return freep;
 }
-
 /* ====================================================================== */
+
 
 void *internal_malloc(size_t size)
 {
-  /*
-  je parcours la liste
-  si je suis sur un bloc de taille >= à la taille souhaitée
-  si je suis sur un bloc de taille = à la taille cherchée
-  supprimer le bloc de la liste
-  retourner le pointeur comme résultat de la fonction
-  sinon
-  découper le zone et ajouter la zone restante libre à la liste
-  retourner le pointeur comme résultat de la fonction
-  si j'ai réalisé un tour de liste (donc sans trouver)
-  allouer une nouvelle zone à la liste (obtenue par sbrk)
-  ajouter la zone à la liste (via un appel à free)
-  */
   Header *prevp, *p;
   unsigned blocks = BLOCKS_TO_ALLOCATE(size);
-  for (prevp = freep, p = NEXT(freep);; prevp = p, p = NEXT(p))
+  for (p = NEXT(freep), prevp = freep; SIZE(p) < blocks; prevp = p, p = NEXT(p))
   {
-    if (SIZE(p) >= size)
-    {
-      if (SIZE(p) == size)
-      {
-        NEXT(prevp) = NEXT(p);
-        return p + 1;
-      }
-      else
-      {
-        // SIZE(p) > size --> découpage
-        Header *new = p + blocks;
-        SIZE(new) = SIZE(p) - blocks;
-        NEXT(new) = NEXT(p);
-        NEXT(prevp) = new;
-        SIZE(p) = blocks;
-        return p + 1;
-      }
-    }
-    if ((p = allocate_core(blocks)) == NULL)
-        return NULL;
-    else{
-
-    }
-  }
-  // A COMPLETER
-  // fait un appel à allocate_core si pas de place dans la liste freep
-  return NULL;
-}
-
-void *internal_malloc2(size_t size)
-{
-  Header *p, *prevp;
-  unsigned blocks;
-  /* Allouer un bloc dont la taille est un multiple de celle d'un header */
-  blocks = BLOCKS_TO_ALLOCATE(size);
-  /* Chercher un bloc assez gros dans la liste des blocs libres */
-  for (prevp = freep, p = NEXT(freep);; prevp = p, p = NEXT(p))
-  {
-    if (SIZE(p) >= blocks)
-    {
-      if (SIZE(p) == blocks)
-      {
-        /* Gagne: c'est juste la bonne taille */
-        NEXT(prevp) = NEXT(p);
-      }
-      else
-      {
-        /* Découpage par le début du bloc libre 
-                NEXT(prevp)=p+size;
-                SIZE(NEXT(prevp))=SIZE(p)-size;
-                */
-        Header *new = p + blocks;
-        SIZE(new) = SIZE(p) - blocks;
-        NEXT(new) = NEXT(p);
-        NEXT(prevp) = new;
-        SIZE(p) = blocks;
-      }
-      return (void *)(p + 1);
-    }
-    /* Regarder si on a fait un tour complet dans la liste des blocs libres */
     if (p == freep)
     {
-      /* Allouer de la memoire et la remettre dans la ronde */
+      // on a fait un tour de liste --> pas de place
       if ((p = allocate_core(blocks)) == NULL)
+      { // NULL si plus de place en mémoire
         return NULL;
+      }
     }
   }
+  if (SIZE(p) == blocks)
+  {
+    NEXT(prevp) = NEXT(p);
+  }
+  else
+  {
+    // découpage
+    Header *new = p + blocks;
+    SIZE(new) = SIZE(p) - blocks;
+    NEXT(prevp) = new;
+    NEXT(new) = NEXT(p);
+  }
+  SIZE(p) = blocks;
+  return (void *)(p + 1);
 }
+
 
 /* ====================================================================== */
 
+
 void internal_free(void *ptr)
 {
-  // A COMPLETER
-  // Libère la zone pointée par ptr en l'insérant dans freep
-  // Essai de coller les blocs adjacents à cette zone
-  // NOTA : la liste freep est triée par ordre croissant
+  Header *headerPtr = ptr;
+  headerPtr--;
+  int headerPtr_blocks = BLOCKS_TO_ALLOCATE(SIZE(headerPtr));
+  Header *prevp = NULL;
+  Header *p = freep;
+  bool has_found = false;
+  for (p = NEXT(freep), prevp = freep; p < headerPtr && p != freep; prevp = p, p = NEXT(p))
+  {
+    if (NEXT(freep) == freep)
+      break;
+    int prev_blocks = BLOCKS_TO_ALLOCATE(SIZE(prevp));
+    if (headerPtr + headerPtr_blocks == p ||
+        prevp + prev_blocks == headerPtr)
+    {
+      has_found = true;
+      if (prevp + prev_blocks == headerPtr && headerPtr + headerPtr_blocks != p)
+      {
+        SIZE(prevp) += SIZE(headerPtr);
+        NEXT(headerPtr) = NEXT(prevp);
+        NEXT(prevp) = headerPtr;
+      }
+      else if (headerPtr + headerPtr_blocks == p && prevp + prev_blocks != headerPtr)
+      {
+        SIZE(headerPtr) += SIZE(p);
+        NEXT(headerPtr) = p;
+        NEXT(prevp) = headerPtr;
+      }
+      else
+      {                                           
+        // zone libre à gauche et à droite,
+        SIZE(prevp) += SIZE(headerPtr) + SIZE(p); 
+        NEXT(prevp) = NEXT(p);
+      }
+    }
+  }
+  if (!has_found)
+  { 
+    // zone occupée à gauche et à droite.
+    NEXT(headerPtr) = p;
+    NEXT(prevp) = headerPtr;
+  }
 }
 
-void internal_free2(void *ptr) {
-    Header *bp, *p, *prevp;
-    /* Ajuster bp sur le debut du bloc */
-    bp = ((Header *) ptr) - 1;
-    for (prevp = freep, p = NEXT(freep);    ; prevp = p, p = NEXT(p)) {
-        if (NEXT(prevp) == freep || p > bp) {
-            break;
-        }
-    }
-    /* Essayer de "coller" ce bloc au suivant */
-    
-    /* Essayer de "coller" ce bloc au precedent */
-    
-}
 
 /* ====================================================================== */
 
 void *internal_calloc(size_t nmemb, size_t size)
 {
-  // A COMPLETER
-  // Utilise internal_malloc
+  size_t byte_size = nmemb * size;
+  void *ptr = internal_malloc(byte_size);
+  memset(ptr, '\0', byte_size);
+  return ptr;
 }
 
 void *internal_realloc(void *ptr, size_t size)
