@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fef2729-979c-4525-8ad2-7d1bcc46e6d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/MergeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/QuickSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/SimpleSorting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/SlowInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td6/Correction/lab6/TestSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td7/Correction/ConnectedComponents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td7/Correction/Cycles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td7/Correction/PathFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/td7/Correction/RootFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zip/sol-lab6.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zip/sol-lab7.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/td6/TestSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/TestSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/td6/part3/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/part3/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/td6/part3/TriFusion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/part3/TriFusion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/td6/part4/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td6/part4/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/Correction/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/Correction/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/Correction/EmptyTreeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/Correction/EmptyTreeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/Correction/RankedBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/Correction/RankedBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/Correction/TestBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/Correction/TestBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/td4/Correction/TestRankedBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/td4/Correction/TestRankedBST.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +56,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -68,20 +80,7 @@
       <recent name="td5.part4" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestSort">
-    <configuration name="BinaryNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="td3.Correction.part1_2.BinaryNode" />
-      <module name="exercice_java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="td3.Correction.part1_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestGraph">
     <configuration name="BinarySearchTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="td4.part1_2_3.BinarySearchTree" />
       <module name="exercice_java" />
@@ -101,6 +100,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="td6.part3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="td7.graph.TestGraph" />
+      <module name="exercice_java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="td7.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,19 +147,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BinaryNode" />
       <item itemvalue="Application.BinarySearchTree" />
       <item itemvalue="Application.TestSort" />
       <item itemvalue="Application.MergeSort" />
       <item itemvalue="Application.TriFusion" />
+      <item itemvalue="Application.TestGraph" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestGraph" />
         <item itemvalue="Application.TestSort" />
         <item itemvalue="Application.TriFusion" />
         <item itemvalue="Application.MergeSort" />
         <item itemvalue="Application.BinarySearchTree" />
-        <item itemvalue="Application.BinaryNode" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585926759792</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pb merge">
+      <created>1588241600276</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588241600276</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,18 +224,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="début du td sorting jusqu'à merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="début du td sorting jusqu'à merge" />
+    <MESSAGE value="pb merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="pb merge" />
   </component>
   <component name="WindowStateProjectService">
     <state x="263" y="336" width="524" height="444" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1581153257110">
@@ -227,10 +246,11 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="283" y="439" width="494" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/67.27.1853.1053@67.27.1853.1053" timestamp="1581153258867" />
-    <state x="380" y="25" key="CommitChangelistDialog2" timestamp="1585926759561">
-      <screen x="65" y="24" width="1535" height="876" />
+    <state x="447" y="28" width="986" height="904" key="CommitChangelistDialog2" timestamp="1588241600201">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="380" y="25" key="CommitChangelistDialog2/65.24.1535.876@65.24.1535.876" timestamp="1585926759561" />
+    <state x="447" y="28" width="986" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1588241600201" />
     <state x="303" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583219080224">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -279,11 +299,11 @@
       <screen x="65" y="24" width="1535" height="876" />
     </state>
     <state width="498" height="446" key="SwitcherDM/65.24.1535.876@65.24.1535.876" timestamp="1585917680485" />
-    <state x="510" y="221" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588241553688">
+    <state x="510" y="221" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588241601963">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="432" y="185" key="Vcs.Push.Dialog.v2/65.24.1535.876@65.24.1535.876" timestamp="1585926762529" />
-    <state x="510" y="221" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1588241553688" />
+    <state x="510" y="221" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1588241601963" />
     <state x="167" y="125" width="727" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581152328893">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

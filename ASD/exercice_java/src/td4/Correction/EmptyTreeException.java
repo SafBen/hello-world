@@ -1,11 +1,11 @@
-package ads.lab4;
+package td4.Correction;
 
 /**
  * An exception class for empty tree
  */
 @SuppressWarnings("serial")
 public class EmptyTreeException extends Exception {
-	
+
 	public EmptyTreeException() {
 		super();
 	}
