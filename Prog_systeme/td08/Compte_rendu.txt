@@ -1,0 +1,23 @@
+Programmation Système	-   Safwane Benidir SI3
+
+Exercice 1
+
+La taille demandé par malloc(sizeof(struct Data)) est de:
+100*sizeof(char)+sizeof(int)
+
+
+Exercice 2
+
+Dans l'exemple test-simple-my-malloc.html si on fait malloc(80) la zone mémoire utilisée sera à la fin, celle située après la zone utilisant 384 octets. Cela ne déclenchera pas de nouvel appel à sbrk car il reste suffisament d'espace mémoire. En effet à l'aide du schéma on trouve comme espace libre :
+(240+800) - (16+512 + 16+384) = 112
+or 112 > 80+16 donc il y a assez d'espace.
+
+
+Exercice 3
+
+À la fin de l'exécution des différents malloc il reste un trou de 48 octets, en prenant en compte la taille du header qui est de 16 octets ici, on peut demander au maximum de faire un malloc de 48-16= 32 octets
+
+
+Exercice 4.2.2
+
+Dans cet exemple on voit que l'allocation d'un espace mémoire de ne se fait pas dès que l'on a assez de place, cela est fait pour éviter la fragmentation.

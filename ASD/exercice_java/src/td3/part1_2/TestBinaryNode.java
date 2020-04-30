@@ -1,6 +1,6 @@
 package td3.part1_2;
 
-//import ads.util.TestClass;
+//import td7.util.TestClass;
 import td1.TestClass;
 
 import java.util.ArrayList;

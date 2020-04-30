@@ -4,8 +4,8 @@ import td2.part3.EmptyQueueException;
 import td3.part1_2.BinaryNode;
 
 import java.util.*;
-//import ads.lab2.ListQueue;
-//import ads.lab2.EmptyQueueException;
+//import td7.lab2.ListQueue;
+//import td7.lab2.EmptyQueueException;
 
 /**
  * A class for genealogy 

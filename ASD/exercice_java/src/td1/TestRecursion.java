@@ -1,6 +1,6 @@
 package td1;
 
-//import ads.util.TestClass;
+//import td7.util.TestClass;
 import java.util.Scanner;
 
 /**
