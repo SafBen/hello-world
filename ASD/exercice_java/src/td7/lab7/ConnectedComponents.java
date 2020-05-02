@@ -62,6 +62,7 @@ public class ConnectedComponents {
 
 		cc = find(GraphReader.U1);
 		//System.out.println(cc);
+		
 		System.out.println(cc);
 	}
 }
