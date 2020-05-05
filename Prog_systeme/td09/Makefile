@@ -1,5 +1,5 @@
 CC=g++
-CPPFLAGS=-c -fpic -Wall -I "/home/user/Documents/intellij/idea-IU-193.6911.18/jbr/include" -I "/home/user/Documents/intellij/idea-IU-193.6911.18/jbr/include/linux"
+CPPFLAGS=-c -fpic -Wall -I "/snap/intellij-idea-ultimate/217/jbr/include" -I "/snap/intellij-idea-ultimate/217/jbr/include/linux"
 LIBFLAGS=-Wl,-soname,lib$*.so -shared -o 
 JAVA=$(wildcard *.java)
 H=$(JAVA:.java=.h)

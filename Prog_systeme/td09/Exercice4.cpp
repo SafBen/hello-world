@@ -2,9 +2,9 @@
  * Exercice 4
  */
 
-#include "JavaFromC.h"
+#include "Exercice4.h"
 #include <stdio.h>
-JNIEXPORT void JNICALL Java_JavaFromC_callJavaMethod(JNIEnv *env, jobject obj)
+JNIEXPORT void JNICALL Java_Exercice4_callJavaMethod(JNIEnv *env, jobject obj)
 {
     // Récupération d'un objet de Metaclasse
     jclass cls = env->GetObjectClass(obj);
