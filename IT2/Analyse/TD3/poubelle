@@ -1,0 +1,7 @@
+{lettre}                ECHO; BEGIN MOT;
+<MOT>{lettre}           ECHO;
+<MOT>" "                BEGIN PAS_MOT;
+<PAS_MOT>" "            {};
+<PAS_MOT>.              {putchar(' ');}; ECHO; BEGIN INI;
+
+
