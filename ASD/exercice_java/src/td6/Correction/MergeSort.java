@@ -1,5 +1,7 @@
 package td6.Correction;
 
+import java.util.Arrays;
+
 /**
  * A class for the recursive merge sort algorithm.
  */
@@ -59,5 +61,7 @@ public class MergeSort {
 	private static <AnyType> void transfer(AnyType[] tmp, AnyType[] array, int lo, int hi) {
 		for ( int i = lo; i <= hi; i++ )
 			array[i] = tmp[i];
+		System.out.println("tmp = "+Arrays.toString(tmp));
+		System.out.println(Arrays.toString(array));
 	}
 }

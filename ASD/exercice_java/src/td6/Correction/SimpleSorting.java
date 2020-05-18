@@ -1,5 +1,7 @@
 package td6.Correction;
 
+import java.util.Arrays;
+
 /**
  * A class for simple sorting methods
  */
@@ -15,6 +17,7 @@ public class SimpleSorting {
 				if ( array[j].compareTo(array[k]) < 0 )
 					k = j;
 			swap(array, i, k);
+			System.out.println(Arrays.toString(array));
 		}
 	}
 
@@ -30,6 +33,7 @@ public class SimpleSorting {
 				j = j - 1;
 			}
 			array[j] = x;
+			System.out.println(Arrays.toString(array));
 		}
 	}
 

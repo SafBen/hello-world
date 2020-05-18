@@ -1,5 +1,7 @@
 package td6.Correction;
 
+import java.util.Arrays;
+
 /**
  * A class for the quicksort algorithm
  */
@@ -38,6 +40,8 @@ public class QuickSort {
 			if ( array[i].compareTo(pivot) < 0 )
 				swap(array,i,++p);
 		swap(array,lo,p);
+		System.out.println("pivot = "+p);
+		System.out.println(array);
 		return p;
 	}
 
@@ -73,6 +77,7 @@ public class QuickSort {
 				j = j - 1;
 			}
 			array[j] = x;
+			System.out.println(Arrays.toString(array));
 		}
 	}
 

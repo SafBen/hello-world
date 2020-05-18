@@ -3,6 +3,8 @@ package td6.Correction;
 
 import td5.Correction.BinaryHeap;
 
+import java.util.Arrays;
+
 /**
  * A class for the heap sort algorithm.
  */
@@ -17,6 +19,7 @@ public class HeapSort {
 		for ( int i = array.length - 1; i > 0; i-- )
 			try {
 				array[i] = heap.deleteExtreme();
+				System.out.println(Arrays.toString(array));
 			}
 			catch ( Exception e ) {}
 	}

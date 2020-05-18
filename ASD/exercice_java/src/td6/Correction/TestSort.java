@@ -10,34 +10,34 @@ import java.util.Arrays;
 public class TestSort extends TestClass<TestSort> {
 
 	// the size of the array
-	private static final int SIZE = 256;
-	private SlowInteger[] array;
-	private SlowInteger[] unsorted;
-	private SlowInteger[] sorted;
+	private static int SIZE = 8;
+	private static SlowInteger[] array;
+	private static SlowInteger[] unsorted;
+	private static SlowInteger[] sorted;
 
 	/**
 	 * Build a TestSort object to test various
 	 * sorting methods
 	 */
 	public TestSort() {
-		array = new SlowInteger[SIZE];
+		/*array = new SlowInteger[SIZE];
 		unsorted = new SlowInteger[SIZE];
-		sorted = new SlowInteger[SIZE];
+		sorted = new SlowInteger[SIZE];*/
 		// set the slowness of the compareTo
 		// method on SlowInteger objects
 		SlowInteger.setSlowness(1);
-		newArray();
+		// newArray();
 	}
 
 	public void heapsort() {
 		long startTime = System.nanoTime();
 		HeapSort.sort(array);
 		long endTime = System.nanoTime();
-		if ( Arrays.equals(array,sorted) )
+		/*if ( Arrays.equals(array,sorted) )
 			System.out.println("Sorting completed!");
 		else
 			System.out.println("Oops, your sort method is wrong!");
-		showArrays();
+		showArrays();*/
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
 		restoreArray();
 	}
@@ -46,11 +46,11 @@ public class TestSort extends TestClass<TestSort> {
 		long startTime = System.nanoTime();
 		MergeSort.sort(array);
 		long endTime = System.nanoTime();
-		if ( Arrays.equals(array,sorted) )
+		/*if ( Arrays.equals(array,sorted) )
 			System.out.println("Sorting completed!");
 		else
 			System.out.println("Oops, your sort method is wrong!");
-		showArrays();
+		showArrays();*/
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
 		restoreArray();
 	}
@@ -59,11 +59,11 @@ public class TestSort extends TestClass<TestSort> {
 		long startTime = System.nanoTime();
 		QuickSort.sort(array);
 		long endTime = System.nanoTime();
-		if ( Arrays.equals(array,sorted) )
+		/*if ( Arrays.equals(array,sorted) )
 			System.out.println("Sorting completed!");
 		else
 			System.out.println("Oops, your sort method is wrong!");
-		showArrays();
+		showArrays();*/
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
 		restoreArray();
 	}
@@ -72,11 +72,11 @@ public class TestSort extends TestClass<TestSort> {
 		long startTime = System.nanoTime();
 		SimpleSorting.selection(array);
 		long endTime = System.nanoTime();
-		if ( Arrays.equals(array,sorted) )
+		/*if ( Arrays.equals(array,sorted) )
 			System.out.println("Sorting completed!");
 		else
 			System.out.println("Oops, your sort method is wrong!");
-		showArrays();
+		showArrays();*/
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
 		restoreArray();
 	}
@@ -85,11 +85,11 @@ public class TestSort extends TestClass<TestSort> {
 		long startTime = System.nanoTime();
 		SimpleSorting.insertion(array);
 		long endTime = System.nanoTime();
-		if ( Arrays.equals(array,sorted) )
+		/*if ( Arrays.equals(array,sorted) )
 			System.out.println("Sorting completed!");
 		else
 			System.out.println("Oops, your sort method is wrong!");
-		showArrays();
+		showArrays();*/
 		System.out.println("Execution time: " + ((endTime - startTime)/1000000) + " ms");
 		restoreArray();
 	}
@@ -103,9 +103,9 @@ public class TestSort extends TestClass<TestSort> {
 		System.out.println(Arrays.toString(array));
 	}
 
-	public void newArray() {
+	public void newArray(int tab[]) {
 		for ( int i = 0; i < array.length; i++ ) {
-			array[i] = new SlowInteger(1 + (int) (Math.random() * SIZE));
+			array[i] = new SlowInteger(tab[i]);
 			sorted[i] = unsorted[i] = array[i];
 		}
 		Arrays.sort(sorted);
@@ -119,6 +119,25 @@ public class TestSort extends TestClass<TestSort> {
 
     public static void main(String[] args) {
     	TestSort test = new TestSort();
-        test.tester();
+        //test.tester();
+		int [] tab = {1, 3, 4, 5, 8, 7, 6, 5};
+		SIZE=tab.length;
+		array = new SlowInteger[SIZE];
+		unsorted = new SlowInteger[SIZE];
+		sorted = new SlowInteger[SIZE];
+		test.newArray(tab);
+		System.out.println("avant "+Arrays.toString(array));
+		System.out.println("\nSÉLECTION---------------------------\n");
+		test.selectionsort();
+		System.out.println("\nINSERTION---------------------------\n");
+		test.insertionsort();
+		System.out.println("\nQUICKSORT---------------------------\n");
+		test.quicksort();
+		System.out.println("\nHEAPSORT---------------------------\n");
+		test.heapsort();
+		System.out.println("\nMERGESORT---------------------------\n");
+		test.mergesort();
+		System.out.println("\n---------------------------\n");
+		System.out.println("après "+Arrays.toString(array));
     }
 }
