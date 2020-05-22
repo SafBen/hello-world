@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	for (i = 0; i < argc - 1; i++)
 		a[i] = atoi(argv[i + 1]);
 
-	mysort(a, argc);
+	mysort(a, argc-1);	// agrc-1 au lieu de argc
 
 	for (i = 0; i < argc - 1; i++)
 		printf("%d ", a[i]);

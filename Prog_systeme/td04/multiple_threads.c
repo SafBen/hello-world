@@ -7,7 +7,7 @@
 
 #include "timer.h"
 
-#define NTHREADS 100
+#define NTHREADS 5000
 
 
 void wait_threads(int,pthread_t[]); // Définition du prototype de fonction pour l'utiliser

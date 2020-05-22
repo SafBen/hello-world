@@ -4,25 +4,19 @@
 #include <unistd.h>
 
 
-void print(int n){
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\n",i);
-    }
-    
-}
 int main(){
     switch (fork()) {
         case -1 :       // Cas d'erreur
             perror("fork");
             exit(1);
         case 0 :        // Processus fils
-            print(10);   // On fait l'affichage   
-            exit(1);    // On sort de la fonction pour éviter les duplications
+            for(int j = 0; j<10; j++){
+                printf("%d \n",j);
+                }   
+            exit(1);
         default :
-            sleep(1);
+            sleep(5);   // sleep assez long pour voir le zombie
             break;
     }
-    
     return 0;
 }

@@ -5,7 +5,7 @@
 
 #include "timer.h"
 
-#define NPROCESS 100
+#define NPROCESS 5000
 
 void wait_processus(int); // Définition du prototype de fonction pour l'utiliser
 

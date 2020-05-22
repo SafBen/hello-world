@@ -28,7 +28,7 @@ int main()
     sigact.sa_mask = msk_int;
     sigaction(SIGINT, &sigact, NULL);
     printf("INT et SEGV piégés\n");
-    /*
+    
     while (1){
         if (count>=5){
             return 0;
@@ -37,8 +37,8 @@ int main()
 
         }
     }
-    */
-   sleep(5);
+    
+    //sleep(5);
 
     return 0;
 }

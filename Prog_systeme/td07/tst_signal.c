@@ -14,11 +14,8 @@ void on_signal(int sig)
 int main()
 {
     printf("pid = %d\n",getpid());
-    void (*ph)(int);
-    signal(SIGSEGV, SIG_IGN);
-    ph = signal(SIGINT, SIG_IGN);
     printf("INT et SEGV piégés\n");
-    /*
+    
     while (1){
         if (count>=5){
             return 0;
@@ -28,15 +25,7 @@ int main()
             signal(SIGINT, on_signal);
         }
     }
-    */
-   /*sleep(5);*/
-   if (count>=5){
-            return 0;
-        }
-        else{
-            signal(SIGSEGV, on_signal);
-            signal(SIGINT, on_signal);
-        }
-    sleep(5);
-    return 0;
+    
+   //sleep(5);
+   return 0;
 }

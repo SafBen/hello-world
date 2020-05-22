@@ -9,6 +9,8 @@ int count=0;
 void on_signal(int sig)
 {
     printf("*** signal %d\n", sig);
+    sleep(1);
+    printf("*** fin handler\n");
 }
 int main()
 {

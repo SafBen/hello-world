@@ -13,7 +13,7 @@ Exercice 2
 
 Le pid des threads est identique comme attendu.
 L'identifiant de thread Posix est en revanche différent pour les 2.
-On constate qu'entre un sleep et un autre le même thread est des fois exécuté et des fois non, cela dépend de la manière dont l'OS passe la main au différent thread.
+On constate qu'entre un sleep et un autre les threads ne sont pas toujours exécuté dans le même ordre, cela dépend de la manière dont l'OS passe la main au différent thread.
 
 
 Exercice 3

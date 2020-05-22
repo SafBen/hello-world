@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void lecture(int fd){
@@ -35,6 +36,7 @@ int main(){
                 }
             }
             close(p[1]);
+            exit(0);
             break;
         default:
             break;

@@ -10,30 +10,26 @@ Exercice 1
 #include <sys/types.h>
 #include <unistd.h>
 
+
 int P=10;
 
-void print(int n){
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\n",i);
-    }
-    
-}
-int main(){
-    for (int i = 0; i < P; i++)
-    {
-        switch (fork()) {
-        case -1 :       // Cas d'erreur
-            perror("fork");
+int main(int argc, char** argv){ 
+    int pid;
+    for(int i = 0; i<P; i++){
+        switch (pid = fork()){
+        case -1:
+            perror("fork error\n");
             exit(1);
-        case 0 :        // Processus fils
-            print(P);   // On fait l'affichage
-            exit(1);    // On sort de la fonction pour éviter les duplications
-        default :
+        case 0:
+            for(int j = 0; j<P; j++){
+                printf("%d \n",j);
+                sleep(1);
+                }
+            exit(1);
+        default:
             break;
         }
     }
-    
     return 0;
 }
 --------------------------------------------------------------------------
@@ -58,7 +54,7 @@ En mettant le sleep dans le case du père (donc default) à la place du fils on 
 
 Exercice 4
 
-On remet le sleep pour le fils et on affiche le pid du père. À la première itération celui-ci est inchangé puis le pid du père passe à 1. En effet le processus père se termine avant car il n'y a pas de sleep
+On remet le sleep pour le fils et on affiche le pid du père. À la première itération celui-ci est inchangé puis le pid du père passe à 1. En effet le processus père se termine avant à cause du sleep dans le fils. Ce dernier est récupéré par le processus init.
 
 
 Exercice 5

@@ -11,7 +11,7 @@ Exercice 1
 
 4. La commande ps permet de voir le pid des processus exécutés depuis l'ouverture du terminal.
 
-5. La commande kill -SIGSTOP p permet de stopper l'exécution du programme qui a pour pid p. Cependant le programme n'est pas arrêté. kill -SIGSTOP p agit comme Ctrl-Z.
+5. La commande kill -SIGSTOP p permet de stopper l'exécution du programme qui a pour pid p. Cependant le processus n'est pas tué, il est suspendu. kill -SIGSTOP p agit comme Ctrl-Z.
 
 6. Le signal pour continuer est SIDCONT et a pour numéro 18. Ainsi
 kill -18 pid_xeyes permet de reprendre l'exécution du programme comme avec la commande bg.

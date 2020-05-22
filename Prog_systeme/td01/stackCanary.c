@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
   int t[10];
   const int sig = 1234567890;
   
-  for (int i = 0; i <= 10; i++) {
+  for (int i = 0; i < 10; i++) { // i<10 au lieu de i<=10
     t[i] = 0;
   }
 
