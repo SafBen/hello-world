@@ -1,0 +1,62 @@
+Programmation système : TD1
+
+Exercice 1
+
+Contenu de argc et argv:
+Le fichier launch.json indique qu'il y a un paramètre à donner au programme debugSimple.c qui est "456". Or il y a toujours le premier paramètre qui correspond au nom du programme. Ainsi nous avons 2 paramètres donc argc=2. Dans argv nous avons bien le premier élément qui est le chemin du fichier debugSimple
+
+Lien entre 47 et '/':
+'/' est codé par 47 dans la table Ascii
+
+Exercice 2
+
+Au lancement les valeurs de prog, arg et w sont initialisées par défaut par la machine puis prog prend la valeur du premier argument soit le nom du fichier. C'est un pointeur donc il pointe sur le premier caractère du chemin soit le caractère '/'. arg, étant également un pointeur, prend la valeur du premier caractère du 2e argument soit le caractère '4'.
+
+Exercice 3
+
+&w est l'adresse du pointeur
+*&w est l'adresse de l'objet pointé par w
+**&w est la valeur de l'objet pointé par w
+
+Exercice 4
+
+À la fin de l'exécution on voit sur la sortie du terminal l'affichage "bonjour"
+
+Exercice 5
+
+Point d'arrêt conditionnel
+En ajoutant un point d'arrêt conditionnel z==2 on s'arrête bien à la ligne 10, en mettant une autre valeur le programme ne s'arrête pas donc il continue jusqu'à terminer et affiche bonjour en sortie.
+
+Exercice 6
+
+Il n'y a que 2 éléments dans argv donc en mettant un espison sur *argv@3 le 3e élément, n'existant pas, est vide.
+
+Exercice 7
+
+Avec la commande -exec info registers on voit le contenu des registres
+
+Partie 5
+
+3) un char contient 1 octet, pour retrouver la valeur du int il faut se déplacer de 4 octets donc un int contient 4 octets (de la même manière un short en contient 2). 
+1 octet = 8 bits donc si le int (ou short) dépasse 2⁸-1=255, cette valeur étant sur 2 octets, elle aura donc une valeur différente pour le char, c'est ce qui arrive ici avec 789.
+789 vaut 00000011 00010101 en binaire sur 2 octets
+Le premier octet vaut 3 et le deuxième vaut 21 c'est ce que l'on voit dans le char
+
+
+4) La différence entre *ci@16 et *si@8 est qu'on ne regarde pas la mémoire de la même manière, dans le premier cas on regarde 16 fois 1 octet et dans le second cas on regarde 8 fois 2 octets. Ainsi une valeur sur 2 octets sera séparé en deux pour le char et correspondra à un seul nombre pour le short.
+
+5) L'incrémentation prend en compte le type de l'objet sur lequel on incrémente, ainsi pour un int incrémenter revient à augmenter de 4 octets, pour un short 2 octets et pour un char 1 octet.
+
+
+Exercice 8
+
+Le tableau a une taille 10 donc de 0 à 9 or on lui demande de mettre la valeur 0 à la case 10 donc la machine va chercher le prochain élément dans la pile qui est la variable sig. Sa valeur est donc écrasée.
+L'erreur vient de la boucle, au lieu de faire i<=10 il faudrait faire i<10
+
+Exercice 9
+
+mysort implémente un algorithme de tri par insertion
+
+Exercice 10
+
+

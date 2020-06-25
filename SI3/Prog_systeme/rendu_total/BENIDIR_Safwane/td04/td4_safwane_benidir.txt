@@ -1,0 +1,43 @@
+Programmation système TD4 Processus et threads
+Safwane Benidir
+
+
+Exercice 1
+
+Sans l'instruction pthread_join le thread n'a pas le temps de s'exécuté (ou il le fait partiellement) donc la durée de vie d'un thread est très court par rapport à son temps d'exécution.
+
+Le exit termine l'exécution de tout le programme alors que le pthread_exit termine seulement l'appel au thread.
+
+
+Exercice 2
+
+Le pid des threads est identique comme attendu.
+L'identifiant de thread Posix est en revanche différent pour les 2.
+On constate qu'entre un sleep et un autre les threads ne sont pas toujours exécuté dans le même ordre, cela dépend de la manière dont l'OS passe la main au différent thread.
+
+
+Exercice 3
+
+Comme pour l'indentifiant Posix le numéro de thread géré par le noyau Linux est différent pour les 2 threads.
+On remarque que si le PID du processus est X, alors les PID des threads crées sont X+1, X+2, ect...
+Donc on voit bien que l'OS gère séparement l'attribution des numéros des threads.
+
+
+Exercice 4
+
+Si le nombre de processus est trop grand le programme abandonne.
+On a le message d'erreur suivant:
+
+fork: Resource temporarily unavailable
+Abandon (core dumped)
+
+
+Exercice 5
+
+Pour 5000 processus cela prend 156 ms et pour 10000 threads cela prend 116 ms
+soit environ 30% de moins pour les threads.
+
+
+Exercice 6
+
+
