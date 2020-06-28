@@ -59,10 +59,10 @@ def max_mult_diag_droite(n,t):
 def max_mult_diag_gauche(n,t):
     mult=1
     max=l=c=0
-    for i in range(len(t)-1,n,-1):
+    for i in range(len(t)-n):
         for j in range(len(t[0])-1,n,-1):
             for k in range(n):
-                mult=mult*t[i-k][j-k]
+                mult=mult*t[i+k][j-k]
                 if max<mult:
                     max=mult
                     l=i
