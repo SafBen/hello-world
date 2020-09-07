@@ -1,0 +1,11 @@
+<bde>
+	<student>
+		<infospersonels>
+			<nom>Benidir</nom>
+			<prenom>Safwane</prenom>
+			<adresse>Grasse</adresse>
+			<mobile>1234</mobile>
+			<email>adresse@gmail.com</email>
+		</infospersonels>
+	</student>
+</bde>

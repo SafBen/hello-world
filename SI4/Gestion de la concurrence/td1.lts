@@ -1,0 +1,25 @@
+const N = 2
+range T = 0..N
+range R = 0..N*N
+PRODUCT = (in[a:T]->in[b:T]->TOTAL[a*b]),
+TOTAL[s:R] = (out[s]->PRODUCT).
+
+TRAFFIC_LIGHT = (vert->orange->rouge->TRAFFIC_LIGHT).
+
+PIECE = (lancer->pile->PIECE|lancer->face->PIECE).
+
+
+const TOT = 30
+const DIX = 10
+const VINGT = 20
+const CINQUANTE = 50
+A = (when(RES<TOT) dix->A)
+RES[] = 
+
+
+P = (m10->METTRE20
+	|m20->METTRE10
+	|m50->RENDRE20).
+METTRE10 = (m10->METTRE10 ou SERVIR ??
+			|m20->SERVIR
+			|m50->RENDRE30).

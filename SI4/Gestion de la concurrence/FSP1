@@ -1,0 +1,25 @@
+lettre minuscule action
+lettre maj processus : plusieurs actions
+x->P => l'action x se comporte comme le processus P
+
+ONESHOT = ( once -> STOP).
+Respecter parenthèse et point quand fin sinon ","
+ONESHOT se comporte comme once puis STOP
+
+Si récursif
+Q = (on -> off -> Q).
+ou
+SWITCH = OFF,
+OFF = (on->ON),
+ON = (off->OFF).
+
+
+Un processus a un alphaber et une trace
+alphabet du processus : v,o,r
+trace : v->o->r->v->o->r...
+puis suite sur slide TEST
+
+
+if différent de action x ou y car il n'y a pas d'ordre
+
+
