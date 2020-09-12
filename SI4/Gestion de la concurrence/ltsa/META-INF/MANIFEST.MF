@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: scenebeans.jar ltl2buchi.jar
-Created-By: 1.5.0_01 (Sun Microsystems Inc.)
-Main-Class: HPWindow
-

@@ -1,0 +1,21 @@
+Safwane Benidir SI4
+
+TD1 - Machine Learning
+
+Les classifieurs faibles disponibles sur scikit-learn sont :
+-AdaBoost : avec la classe "AdaBoostClassifier"
+-Decision Tree : avec la classe "DecisionTreeClassifier"
+-Support Vector Machines (SVM) : avec les classes "SVC", "NuSVC" et "LinearSVC"
+-Stochastic Gradient Descent : avec la classe "SGDClassifier"
+-Nearest Neighbors : avec les classes "KNeighborsClassifier" et "RadiusNeighborsClassifier"
+-Ridge Classification : avec la classe "RidgeClassifier"
+-Neural Network Model : avec la classe "MLPClassifier"
+
+
+Le boosting AdaBoosting utilise la classe "DecisionTreeClassifier" comme classifieur faible par défaut
+
+Le paramètre "base_estimator" correspond au classifieur utilisé : par défaut "DecisionTreeClassifier"
+Dans le cours cela correspond à : h
+Le paramètre "n_estimators" correspond au nombre d'itération. Dans le cours cela correspond à : T
+Le paramètre "learning_rate" correspond au poids. Dans le cours cela correspond au alpha.
+
