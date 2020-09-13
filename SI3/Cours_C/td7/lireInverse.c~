@@ -1,0 +1,27 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+#define MAX_CAR 100;
+
+int afficherInverse(char ligne[MAX_CAR],int i){
+  for (int j=i ; j>=0 ; j--)
+    printf("%c",ligne[j]);
+  return EXIT_SUCCESS;
+}
+
+int main(void){
+  int c, i = 0;
+  while ((c=getchar())!=EOF){
+    if (c=='\n'){
+      // on a fini de lire une ligne de l'entrée standard
+      // tous les i caractères sont dans le tableau ligne
+      afficherInverse(ligne,i);
+      i = 0;
+    }
+    else{
+      if (i<MAX_CAR)
+	ligne[i++]=c;
+    }
+  }
+  return EXIT_SUCCESS;
+}

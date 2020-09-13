@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef enum{ carre , rond , triangle } forme;
+
+typedef struct noeud {
+  forme f;
+  struct noeud *suivant;
+} * ListeDeFormes;
+
+ListeDeFormes lf;
+
+void afficherForme(forme f) {
+  switch(f) {
+    case carre : printf("carré\n"); break;
+    case rond : printf("rond\n"); break;
+    case triangle : printf("triangle\n"); break;
+    default : printf("forme  inconnue\n");
+  }
+}
+
+void afficherListedeFormes(ListeDeFormes lf){
+  while (lf!=NULL){
+    afficherForme(lf->f);
+    lf = lf->suivant;
+  }
+}
+
+int main(){
+  afficherListedeFormes(lf);
+  return 1;
+}

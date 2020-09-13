@@ -1,0 +1,3 @@
+/home/safwane/Documents/SI3/Programmation_procédurale/TD6/cmake-build-default/CMakeFiles/rebuild_cache.dir
+/home/safwane/Documents/SI3/Programmation_procédurale/TD6/cmake-build-default/CMakeFiles/untitled.dir
+/home/safwane/Documents/SI3/Programmation_procédurale/TD6/cmake-build-default/CMakeFiles/edit_cache.dir

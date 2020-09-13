@@ -1,0 +1,10 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(void) {
+  int x;
+  scanf("%l", &x);
+  x = floor(x);
+  printf("%d\n", x);
+  return EXIT_SUCCESS;
+}

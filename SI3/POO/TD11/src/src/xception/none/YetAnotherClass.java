@@ -1,0 +1,9 @@
+package xception.none;
+
+class YetAnotherClass {
+    private final SomeOtherClass soc = new SomeOtherClass();
+    
+    public double yetAnotherMethod(int i) {
+        return Math.sqrt(soc.someOtherMethod(i));
+    }
+}

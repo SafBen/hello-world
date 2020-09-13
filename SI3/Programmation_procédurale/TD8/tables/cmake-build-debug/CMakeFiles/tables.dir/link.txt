@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/tables.dir/main.c.o CMakeFiles/tables.dir/table-liste.c.o CMakeFiles/tables.dir/table-tableau.c.o  -o tables 

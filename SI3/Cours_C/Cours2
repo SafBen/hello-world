@@ -1,0 +1,129 @@
+CPP (PP pré-processeur)
+compilateur : traduit un code en langage machine
+
+CPD
+prog.c --> CPP --> CC --> exécutable a.out
+CPP traite tout, directives et code
+sortie de CPP il reste que du C
+
+directives :
+
+#define : définir des macros (à paramètre ou sans) permet de définir des constantes
+convention les macros sont en majuscules
+ex: #define MAX 123 (MAX pas typé car pas du c, on associe à MAX suite de caractère)
+quand code recontre MAX on remplace MAX par 123 c'est le CC qui verra s'il y a une erreur ou pas pas le CPP
+#define MAX2 ((MAX)*(MAX)) prendre habitude de mettre des parenthèses (pour le cas macros à paramètres c mieux)
+gcc ... DMAX=125 remplace #define
+
+#include <stdio.h> : inclure fichier (jamais de code dans les .h)
+#include "xxx.h" (soit notation relative i.e répertoire courant, soit notation absolue i.e en partant de la racine /.../.. ect..)
+#include "stdio.h" --> s'il n'y est pas dans le répertoire courant : soit erreur, soit il cherche dans les fichiers standards
+une incluson peut induire une autre inclusion
+si plusieurs include --> si même type déclaré erreur
+donc on fait #pragma once --> permet de ne pas réinclure un fichier
+
+
+Chaine de caractère
+"toto"
+"" (chaine vide)
+"2" chaine de caractère != '2' caractère (pas chaine) != 2 entier
+type char : caractère mais pas de type chaine de caractère
+une chaine de caractère est alors un tableau de caractère
+"ab" <--> ['a','b','\0'] ( \0 marque la fin, il la faut)
+"ab" n'est pas représenté par ['a','b']
+string.h si on veut utiliser strlen, strchar ect..
+
+char s[] = "ab" c'est bien un tableau de 3 caractères avec \0
+char s[] = {'a','b','\0'}
+char s[10] = "ab" possible
+s[0] --> 'a'
+"ab"[1] --> 'b'
+
+
+
+d'habitude un résultat
+si plusieurs résultats ? (avec pointeurs)
+
+transmission par valeur pour les données
+transmission par référence ou résultat pour résultat donc pas adapté pour langage C car que transmission par valeur 
+donc on va simuler avec pointeurs une transmission par référence --> on peut avoir des paramètres en sortie
+  
+
+dans certains langages comme c++
+
+tableau = pointeur constant
+
+void * => résultat type générique qui sera compatible avec tout les types de pointeurs.
+
+
+gcc -o -Wall prog prog.c
+
+gcc est un programme exécutable (en C d'ailleurs)
+on passe à gcc des paramètres programmes 
+
+Comment donner des paramètres progammes à notre programme prog?
+on les donne dans le main
+ex : 
+int main(int argc , char *argv[])
+argc = nombre de paramètres plus le nom du programme
+argv = chaine de caractère qui contient les paramètres sous forme de chaine
+
+ex 
+./prog f1 125 toto
+argc = 3+1 = 4
+argv = 
+
+
+
+switch(opérateur) {case’+’:   c = a + b;break;case’-’:   c = a - b;break;case’x’:   c = a * b;break;case’/’:   c = a / b;break;}
+
+
+
+Allocation dynamique : 
+
+L'objectif de ce
+
+|	Tas
+
+	Pile d'évaluation => création d'une zone locale
+
+	Base Globale  ex: x --> le système réserve une place
+
+
+
+infixe opérandes de par et d'autres de l'opérateur
+2+3*4 = 20 ou 14 il faut règle de priorité donc notation infixe est ambigüe
+=14 ou avec parenthèse => = 20
+post fixe => 15 2 +
+pré fixe => + 15 2
+post fixe est une notation non ambigue
+
+on va utiliser une pile
+
+5 fonctions
+- pile vide : créer pile vide
+- estvide
+- sommet
+- dépiler
+- empiler
+
+ici opérateur binaire => 2 opérandes
+
+2, 3, 4 puis à * il fait opd = 4 dépile puis opg = 3 dépile calcul dans opd =12 puis empile puis + dépile ect...
+
+IL FAUT UN MAIN POUR QUE LA COMPILATION CREE UN EXECUTABLE
+
+gcc pile.c ne créera pas d'exécutable, il faut rajouter -c ==> crée pile.o
+gcc main.c ne reconnaitra pas les fonctions de pile.c il faut -c aussi ==> cal.o
+
+Pour crée l'exécutable : édition des liens le extern permet de relier
+commande ld
+ld pile.o cal.o -o cal marche tjs pas car il manque les printf ect.. si on les utilise
+ces fonctions sont dans lip.c
+donc on utilise gcc
+
+utilité c'est de recompiler que les bouts qui posent problème sinon ça peut prendre bcp de temps.
+
+MAKE permet de créer un graphe de dépendance dans makefile et permet de recompiler tout les fichiers si on en change un et que d'autres en dépendent.
+
+void *elt ==> pointeur sur void ==> n'importe quel type  CONTROLE

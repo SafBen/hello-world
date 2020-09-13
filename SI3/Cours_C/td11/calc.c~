@@ -1,0 +1,14 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+// atoi = ascii to integer
+
+int main(int argc, char *argv[]){
+  switch (argv[2]) {
+  case '+' : printf("%d\n", argv[1] + argv[3]); break;
+  case '-' : printf("%d\n", argv[1] - argv[3]); break;
+  case '*' : printf("%d\n", argv[1] * argv[3]); break;
+  case '/' : printf("%d\n", argv[1] / argv[3]); break;
+  }
+  return 1;
+}

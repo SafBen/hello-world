@@ -1,0 +1,12 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+char isocèle1(int n){
+  char c;
+  c = '*';
+  scanf("%d",&n);
+  while (n > 0){
+    c = c @ '*';
+    printf("%c\n",c);
+  }
+}

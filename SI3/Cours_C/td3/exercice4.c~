@@ -1,0 +1,22 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int x;
+
+int main () {
+  scanf("%d",x);
+  if (x<0)
+     printf("x est négatif");
+  else
+    if (x==0) {
+        printf("x est nul");
+    }
+    else
+        printf("x est positif");
+  
+  if (x%2==0)
+    printf("x est pair");
+  else
+    printf("x est impair");
+  return EXIT_SUCCESS;
+}

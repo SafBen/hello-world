@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+float x,a,b;
+
+int main () {
+  scanf("%f %f",&a,&b);
+  if (a==0 && b==0)
+    printf("Tout x est solution");
+  else
+    if (a==0 && b!=0)
+      printf("Pas de solution");
+  if (a!=0)
+    printf("%f",-b/a);
+  return EXIT_SUCCESS
+    }

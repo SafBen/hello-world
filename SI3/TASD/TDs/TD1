@@ -1,0 +1,72 @@
+TD1
+
+Exercice 1
+
+a) omega = {1,2,3,4,5,6}³ élémentaire car atomique on ne peut pas plus diviser les événements
+exemple pas élémentaire : omega = {pair,impair}
+
+omega est uniforme et les événements sont disjoints
+
+b) |omega| = 6³ = 216
+
+c) "au moins" => on prend le complémentaire soit "aucun as"
+ _
+|A| = 5³ = 125 donc |A| = 216-125 = 91
+
+OU BIEN calcul direct
+
+3as -> 1
+2as -> 2 parmi 3 * 5 = 15
+1as -> 1 parmi 3 * 5² = 75
+d'où 1+15+75 = 91
+
+d) "au moins" => complémentaire
+_
+B = "tout les dés sont différents"
+donc
+ _
+|B| = 6*5*4 = 120
+donc |B| = 216-120 = 96
+
+OU BIEN calcul direct
+
+2 dés -> 2 parmi 3 * 6 * 5 = 90
+3 dés -> 6
+d'où 6+90 = 96
+
+Exercice 3
+
+a) U = [|1,6|]²⁰ |U| = 6²⁰
+b) U = {boule blanche, boule noire}² card(U)=4 pas élémentaire
+   U = {B1B1,B1B2,B1N1,N1N1,N1N2,N1B1} card(U)=6
+c) U = ℝ
+
+Exercice 4
+
+a) U = [|1,6|]²
+X à valeur dans [|2,12|]
+(X=x) = (x-1) si x < 8
+      = (12-x+1) sinon
+P(X=x)= (x-1)/|U| si x < 8
+      = (12-x+1)/|U| sinon
+      = 
+Exercice 5
+
+a) P(A) = 4/52 = 1/13
+   P(B) = 13/52 = 1/4
+   P(A et B) = 1/52
+   P(A)*P(B) = 1/13*1/4 = 1/52 => indépendant
+
+b) P(A) = 3/51 = 1/17
+   P(B) = 12/51 = 4/17
+   P(A et B) = 0 != P(A)*P(B) => dépendant
+
+Exercice 6
+
+a) 5/9
+b) 5/9
+c) 5/9
+d) PLUS GRAND	PLUS PETIT
+R	10	    10
+B	10	    10
+V	8	    7

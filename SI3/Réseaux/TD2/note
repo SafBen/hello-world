@@ -1,0 +1,9 @@
+ping? --> tester délai protocole spéciale envoie paquet et en reçoit et on calcule le rtt (temps)
+
+linux => on capture tout donc il faut filtrer
+machine virtuelle => on capture pas tout
+
+TD2
+2.1) -i = interface
+	-w = filename
+On enregistre les paquets dans le fichier indiqué après -w

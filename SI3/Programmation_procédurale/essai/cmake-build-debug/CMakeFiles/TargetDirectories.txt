@@ -1,0 +1,3 @@
+/home/safwane/Documents/SI3/Programmation_procédurale/essai/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/safwane/Documents/SI3/Programmation_procédurale/essai/cmake-build-debug/CMakeFiles/essai.dir
+/home/safwane/Documents/SI3/Programmation_procédurale/essai/cmake-build-debug/CMakeFiles/edit_cache.dir

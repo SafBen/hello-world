@@ -1,0 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main (void) {
+    printf("Bonjour à tous");
+    printf("**************");
+    return EXIT_SUCCESS;
+}

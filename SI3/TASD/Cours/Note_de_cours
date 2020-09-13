@@ -1,0 +1,21 @@
+calcul probalité = mesure
+
+outils:
+- la somme : si événements disjoints
+- le produit : si événements indépendants
+
+attention différence entre calcul de probas et dénombrement cf exo 1 td1
+
+
+probas conditionnelles:
+
+équivalent à changer d'univers
+"sachant A" implique que le nouvel univers est A d'où la division par P(A)
+
+
+
+
+Remarque:
+Événements dijoints et indépendants => au moins 1 évenement est impossible
+-si dijoint
+contraposé
