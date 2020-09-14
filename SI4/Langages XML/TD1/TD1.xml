@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="TD1.css"?>
+
+<bde>
+	<student>
+		<infospersonels class="rouge">
+			<nom>Benidir</nom>
+			<prenom>Safwane</prenom>
+			<adresse>Grasse</adresse>
+			<mobile>1234</mobile>
+			<email>adresse@gmail.com</email>
+		</infospersonels>
+		<formation>
+		</formation>
+		<emplois>
+			Stage ouvrier 2018: bla bla bla
+			Job d'été 2019: bla bla bla
+		</emplois>
+		<skill xmlns:polytech="google.com">
+			<polytech:langues>
+				Anglais niveau B1
+				Français natal
+				Espagnol niveau B1
+			</polytech:langues>
+			<polytech:autres>
+			</polytech:autres>
+		</skill>
+		<hobby>
+			sport
+		</hobby>
+	</student>
+</bde>

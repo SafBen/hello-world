@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transfo1.xsl" ?>
+<FILMS>
+  <FILM Annee="1958">
+    <TITRE>Vertigo</TITRE>
+    <GENRE>Drame</GENRE>
+    <PAYS>USA</PAYS>
+    <MES idref="3"/>
+    <ROLES>
+      <ROLE>
+        <PRENOM>James</PRENOM>
+        <NOM>Stewart</NOM>
+        <INTITULE>John Ferguson</INTITULE>
+      </ROLE>
+      <ROLE>
+        <PRENOM>Kim</PRENOM>
+        <NOM>Novak</NOM>
+        <INTITULE>Madeleine Elster</INTITULE>
+      </ROLE>
+    </ROLES>
+    
+  </FILM>
+  <FILM Annee="1979">
+    <TITRE>Alien</TITRE>
+    <GENRE>Science-fiction</GENRE>
+    <PAYS>USA</PAYS>
+    <MES idref="4"/>
+    <ROLES>
+      <ROLE>
+        <PRENOM>Sigourney</PRENOM>
+        <NOM>Weaver</NOM>
+        <INTITULE>Ripley</INTITULE>
+      </ROLE>
+    </ROLES>
+    <RESUME></RESUME>
+  </FILM>
+  <FILM Annee="1997">
+    <TITRE>Titanic</TITRE>
+    <GENRE>Drame</GENRE>
+    <PAYS>USA</PAYS>
+    <MES idref="6"/>
+    <ROLES>
+      <ROLE>
+        <PRENOM>Kate</PRENOM>
+        <NOM>Winslet</NOM>
+        <INTITULE>Rose DeWitt Bukater</INTITULE>
+      </ROLE>
+      <ROLE>
+        <PRENOM>Leonardo</PRENOM>
+        <NOM>DiCaprio</NOM>
+        <INTITULE>Jack Dawson</INTITULE>
+      </ROLE>
+    </ROLES>
+    <RESUME>Conduite par Brock Lovett, une expédition américaine fouillant l'épave du Titanic remonte à la
+      surface le croquis d'une femme nue. Alertée par les médias la dame en question, Rose DeWitt
+      Bukater, aujourd'hui centenaire, rejoint les lieux du naufrage, d'où elle entreprend de conter le
+      récit de son fascinant, étrange et tragique voyage...</RESUME>
+  </FILM>
+  <FILM Annee="1986">
+    <TITRE>Sacrifice</TITRE>
+    <GENRE>Drame</GENRE>
+    <PAYS>FR</PAYS>
+    <MES idref="9"/>
+    <ROLES></ROLES>
+  </FILM>
+  </FILMS>
