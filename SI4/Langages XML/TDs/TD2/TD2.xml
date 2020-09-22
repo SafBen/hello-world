@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="TD2.css"?>
+
+
+<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="TD2.xsd">
+	<titre>
+		texte
+	</titre>
+	<cvnom>
+		texte
+	</cvnom>
+	<etatcivil>
+		<nom>
+			texte
+		</nom>
+		<prenom>
+			texte
+		</prenom>
+		<naissance>2000-01-01</naissance>
+		<situation>
+			texte
+		</situation>
+		<adresse>
+			texte
+		</adresse>
+		<code_postal>06130</code_postal>
+		<ville>
+			texte
+		</ville>
+		<pays>
+			texte
+		</pays>
+		<telephone>01-02-03-04-05</telephone>
+		<email>
+			texte
+		</email>
+		<caracteristiques>
+			<caracteristique type="type1">
+				texte
+			</caracteristique>
+		</caracteristiques>
+	</etatcivil>
+	<formations>
+		<formation date-iso="2000-01-01" date="2000-01-01" intitule="formation1"></formation>
+	</formations>
+	<connaissances></connaissances>
+		<!-- </technique type="2" nom="name">
+		</langue nom="anglais" niveau="B1"> -->
+	
+	<professionnel>
+		<experience date-iso="2000-01-01" date="2000-01-01" entreprise="thales" fonction="fonction1">
+
+			<missions>
+				<mission>
+					texte
+				</mission>
+			</missions>
+			<environnement>
+				<technique type="2">3</technique>
+			</environnement>
+		</experience>
+	</professionnel>
+	<!-- NE PEUX PAS APPRAITRE ICI MAIS UN AUTRE FICHIER XML POURRAIT PARTIR DE "PERSONNEL" COMME RACINE 
+		<personnel>
+		<activite type="type2" nom="nom_activite">
+			texte
+		</activite>
+	</personnel> -->
+</cv>

@@ -1,7 +1,7 @@
-concurrent     	    !=     parallèle	inverse ???
-vraiment parallèle         pas certains que ce soit parallèle physiquement
-séparer problème et
-pour accélérer
+concurrent     	    	!=  		parallèle
+pas certains que ce 			vraiment parallèle         
+soit parallèle physiquement		séparer problème et
+					pour accélérer
 
 
 page 5
@@ -49,6 +49,28 @@ page 17
 
 
 ATTENTION POUR LE CODE : IL FAUT TOUJOURS LIBÉRER LE VERROU MÊME SI EXCEPTION SINON LE CODE NE VA PAS À LA FIN DE LA FONCTION ET DONC LE VERROU N'EST PAS LIBÉRER
+
+
+
+
+sémaphore
+
+3 utilisations
+-initialisé à 1 : comme verrou
+-initialisé à 0
+-initialisé à m savoir combien de fois je peux utiliser une ressource
+
+JAVA le sémaphore peut être équitable ou non : si non => utilise pile sinon file
+
+
+attente active peut être plus rapide
+
+
+
+while avec notifyAll
+if avec notify
+MAIS if peut ne pas marché donc on utilise while
+
 
 
 

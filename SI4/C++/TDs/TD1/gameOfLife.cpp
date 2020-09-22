@@ -1,18 +1,1 @@
-#include <iostream>
-#include <string>
-#include <array>
-
-int main(){
-	int N;
-	std::cin >> N;
-	bool b[N];
-	for (int i = 0; i < N; i++)
-	{
-		if (i%4)
-		{
-			/* code */
-		}
-	}
-
-	return 0;
-}
+#include <iostream>#include <string>#include <array>const int N=10;void affiche(std::array<bool,N> array,int generation){    std::cout << "Génération : " << generation << "\n[";    for (int i = 0; i < N-1; i++)    {        std::cout << (array[i]==0 ? "false" : "true") << ", ";    }    std::cout << (array[N-1]==0 ? "false" : "true") << "]";    std::cout<<std::endl;}int main(){    srand(time(nullptr)); // to change value of rand()    std::array<bool, 10> array{};    for (int i = 0; i < N; i++) {        array[i] = rand() % 2 != 0;    }    affiche(array,1);    for (int i = 0; i < N; i++)    {        bool prev,current;        if (i==0 || i==N-1)        {            prev=array[i];            array[i]=false;        }        else{            current=array[i];            array[i]=prev & array[i+1];            prev=current;        }    }    affiche(array,2);    return 0;}

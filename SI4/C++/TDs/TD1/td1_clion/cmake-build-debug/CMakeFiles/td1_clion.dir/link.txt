@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/td1_clion.dir/main.cpp.o CMakeFiles/td1_clion.dir/palindrom.cpp.o CMakeFiles/td1_clion.dir/gameOfLife.cpp.o  -o td1_clion 

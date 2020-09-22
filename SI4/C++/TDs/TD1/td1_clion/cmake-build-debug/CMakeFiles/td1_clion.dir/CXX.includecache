@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/safwane/Bureau/C++/TDs/TD1/td1_clion/gameOfLife.cpp
+gameOfLife.h
+/home/safwane/Bureau/C++/TDs/TD1/td1_clion/gameOfLife.h
+
+/home/safwane/Bureau/C++/TDs/TD1/td1_clion/gameOfLife.h
+iostream
+-
+string
+-
+array
+-
+
