@@ -1,1 +1,8 @@
 synchronized et verrous en java --> quoi en python ?
+
+
+https://github.com/python/cpython/blob/master/Lib/threading.py
+rlock
+semaphore
+
+https://stackoverflow.com/questions/48971121/what-is-the-difference-between-semaphore-and-boundedsemaphore

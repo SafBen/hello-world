@@ -1,0 +1,111 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="cv" type="cvType"/>
+	<xs:complexType name='cvType'>
+		<xs:sequence>
+			<xs:element name='titre' type='xs:string'/>
+			<xs:element name='cvnom' type='xs:string'/>
+			<xs:element name='etatcivil' type='etatcivilType'/>
+			<xs:element name='formations' type='formationsType'/>
+			<xs:element name='connaissances' type='connaissancesType'/>
+			<xs:element name='professionnel' type='professionnelType'/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='etatcivilType'>
+		<xs:sequence>
+			<xs:element name='nom' type='xs:string'/>
+			<xs:element name='prenom' type='xs:string'/>
+			<xs:element name='naissance' type='xs:date'/>
+			<xs:element name='situation' type='xs:string'/>
+			<xs:element name='adresse' type='xs:string'/>
+			<xs:element name='code_postal' type='code_postal'/>
+			<xs:element name='ville' type='xs:string'/>
+			<xs:element name='pays' type='xs:string'/>
+			<xs:element name='telephone' type='telephone'/>
+			<xs:element name='email' type='xs:string'/>
+			<xs:element name='caracteristiques' type='caracteristiquesType'/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name='code_postal'>
+		<xs:restriction base="xs:string">
+				<xs:pattern value="\d{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name='telephone'>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{2}-\d{2}-\d{2}-\d{2}-\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name='caracteristiquesType'>
+		<xs:sequence>
+			<xs:element name='caracteristique' type='caracteristiqueType'/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name='caracteristiqueType'>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name='type' type='xs:string'/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name='formationsType'>
+		<xs:sequence>
+			<xs:element name='formation' type='formationType'/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='formationType'>
+		<xs:sequence>
+		</xs:sequence>
+		<xs:attribute name='date-iso' type='xs:date'/>
+		<xs:attribute name='date' type='xs:date'/>
+		<xs:attribute name='datefin' type='xs:date'/>
+		<xs:attribute name='intitule' type='xs:string'/>
+		<xs:attribute name='description' type='xs:string'/>
+	</xs:complexType>	
+
+	<xs:complexType name='connaissancesType'>
+		<xs:sequence>		
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='professionnelType'>
+		<xs:sequence>
+			<xs:element name='experience' type='experienceType'/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='experienceType'>
+		<xs:sequence>
+			<xs:element name='missions' type='missionsType'/>
+			<xs:element name='environnement' type='environnementType'/>
+		</xs:sequence>
+		<xs:attribute name='date-iso' type='xs:date'/>
+		<xs:attribute name='date' type='xs:date'/>
+		<xs:attribute name='entreprise' type='xs:string'/>
+		<xs:attribute name='fonction' type='xs:string'/>
+	</xs:complexType>	
+
+	<xs:complexType name='missionsType'>
+		<xs:sequence>
+			<xs:element name='mission' type='xs:string'/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='environnementType'>
+		<xs:sequence>
+			<xs:element name='technique' type='techniqueType'/>
+		</xs:sequence>
+	</xs:complexType>	
+
+	<xs:complexType name='techniqueType'>
+		<xs:sequence></xs:sequence>		
+		<xs:attribute name='type' type='xs:integer'/>
+		<xs:attribute name='nom' type='xs:string'/>
+	</xs:complexType>
+</xs:schema> 

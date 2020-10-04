@@ -1,0 +1,8 @@
+La durée moyenne de prêt est propre à un livre 
+
+classe d'association emprunt
+
+livre exemplaire: Un livre est disponible en 1 ou plusieurs exemplaires. Un livre a donc accès à ses exemplaires
+On emprunte un exemplaire (physiquement) et on réserve un livre
+
+Un emprunt a une date correspondant à la date où le livre a effectivement été emprunté. 

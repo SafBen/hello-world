@@ -4,15 +4,15 @@
 
 #include <iostream>
 #include <string>
+#include "palindrom.h"
 
-int main(){
-    std::string s="kayak";
+void palindrom(std::string s){
     for (int i = 0; i < s.length()/2; i++) {
-        if (s[i]!=s[s.length()]-i-1){
+        if (s[i]!=s[s.length()-i-1]){
             std::cout << "No palindrom" << std::endl;
-            return 0;
+            return;
         }
     }
     std::cout << s <<" is a palindrom" << std::endl;
-    return 0;
+    return;
 }

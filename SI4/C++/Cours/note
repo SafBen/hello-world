@@ -1,0 +1,27 @@
+p[x]=*(p+x*sizeof(element))
+
+page 95
+A() faux car 2 pointer pointent sur un objet B : instance et ???
+
+const ne modifie pas état objet
+const dans paramètre permet de faire lecture seule
+
+fonction membre ?
+
+-> : déréférence + appel fonction : donc tester nullptr
+
+inline permet de remplacer appel fonction par ce qu'il y a dedans sans faire d'oprération sur la pile ect...
+
+Constructeur par copy class si pas ref : on copie en boucle.
+
+Class:
+delete sur l'addresse de l'objet si dyamique sinon rien.
+
+friend : a accès aux privées
+
+
+oprator >> Référence & pourquoi ?
+référence car on veut modifier
+pas const logique
+
+operator par défaut ?

@@ -1,0 +1,3 @@
+/home/safwane/Bureau/C++/Train/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/safwane/Bureau/C++/Train/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/safwane/Bureau/C++/Train/cmake-build-debug/CMakeFiles/Train.dir

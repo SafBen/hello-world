@@ -1,0 +1,23 @@
+xml schema
+page 6
+
+keyref ne peut pas avoir une valeur qui n'est pas dans key
+
+un bleu pas dans rouge => pas possible 
+
+
+@ = attribut
+
+
+
+
+Xpath
+
+page 
+node() 			     !=   *
+élément ou text ou attribut	que élément
+
+
+xslt transormation example
+https://stackoverflow.com/questions/24278336/how-can-i-replace-an-id-element-and-all-of-its-reference-elements-in-an-xml-file
+

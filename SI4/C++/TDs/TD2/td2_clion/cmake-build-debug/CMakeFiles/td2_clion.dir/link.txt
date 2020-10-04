@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/td2_clion.dir/main.cpp.o CMakeFiles/td2_clion.dir/Person.cpp.o  -o td2_clion 

@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FILMS" type="FilmsType"/>
+	<xs:complexType name='FilmsType'>
+		<xs:sequence>
+			<xs:element name='FILM' type='FilmType'/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name='FilmType'>
+		<xs:sequence>
+			<xs:element name='TITRE' type='xs:string'/>
+			<xs:element name='GENRE' type='xs:string'/>
+			<xs:element name='PAYS' type='xs:string'/>
+			<xs:element name='ROLES' type='RolesType'/>
+			<xs:element name='RESUME' type='xs:string'/>
+		</xs:sequence>
+		<xs:attribute name='idref' type='xs:integer'/>
+	</xs:complexType>
+	<xs:complexType name='RolesType'>
+		<xs:sequence>
+			<xs:element name='ROLE' type='RoleType'/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name='RoleType'>
+		<xs:sequence>
+			<xs:element name='INTITULE' type='xs:string'/>
+		</xs:sequence>
+		<xs:attribute name='ARTISTE' type='xs:integer'/>
+	</xs:complexType>
+</xs:schema>

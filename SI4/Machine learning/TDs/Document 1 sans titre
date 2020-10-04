@@ -1,0 +1,11 @@
+faire en dimension 3 pas juste 2 classes
+
+to_categorical opération inverse de argmax
+
+to_categorical permet de passer de 
+[0 1 2 3 4 5 6 7 8 9] -> [[1 0 0 0 0 0 0 0 0],
+			  [0 1 0 0 0 0 0 0 0],
+			   ect...]
+
+argmax permet de donner l'indice du max donc
+argmax de [1 0 0 0 0 0...] = 0
