@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/safwane/Bureau/C++/TDs/TD3/td3_clion/Node.cpp
+Node.h
+/home/safwane/Bureau/C++/TDs/TD3/td3_clion/Node.h
+
+/home/safwane/Bureau/C++/TDs/TD3/td3_clion/Node.h
+iostream
+-
+

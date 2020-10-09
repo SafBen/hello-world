@@ -38,11 +38,6 @@ void incr(int& ref){
 
 int main() {
     //test3();
-    int* pi = new int[3];
-    pi[0]=2;
-    pi[1]=5;
-    pi[3]=7;
-    delete[] pi;
-    cout << pi;
+
     return 0;
 }

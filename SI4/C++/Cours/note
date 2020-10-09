@@ -25,3 +25,15 @@ référence car on veut modifier
 pas const logique
 
 operator par défaut ?
+
+
+include .cpp que dans un .h quand on utilise des templates
+
+template <int N>
+si N=10 => un .o
+si N=15 => un autre .o
+
+
+Stack page 32
+il faut redéfinir = affectation et le constructeur de copie.
+defaut suffit pas ?
