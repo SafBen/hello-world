@@ -1,0 +1,106 @@
+# Mini-projet 1
+# Safwane Benidir
+
+# Exercice 4
+
+NEW "EXO4" 2
+START @BEGIN
+END @FIN "VALID"
+
+FROM @BEGIN
+'X,'_ 'X,'X R,R
+'_,'_ L,L @REVENIR
+
+FROM @REVENIR
+'X,'X L,L
+'_,'_ R,R @L
+
+FROM @L
+'X,'X R,S @1X
+'_,'X L,S @M
+
+FROM @1X
+'X,'X R,S @2X
+'_,'X L,S @M
+
+FROM @2X
+'X,'X R,S @3X
+'_,'X L,S @M
+
+FROM @3X
+'X,'X 'X,'L S,R @L
+'_,'X '_,'L S,R @L
+
+
+FROM @M
+'X,'X 'A,'X L,S @A
+'_,'X S,S @N
+
+FROM @A
+'X,'X 'B,'X L,S @B
+'_,'X '_,'X L,S @N
+
+FROM @B
+'X,'X 'C,'X L,S @C
+'_,'X S,S @LAST_M
+
+FROM @C
+'X,'X 'X,'M S,R @M
+'_,'X '_,'M S,R @M
+
+FROM @N
+'_,'X '_,'N S,R
+'_,'_ S,S @FIN
+
+FROM @LAST_M
+'_,'X '_,'M S,R @N
+
+
+
+
+V2 en 3n marche
+
+# Mini-projet 1
+# Safwane Benidir
+
+# Exercice 4
+
+NEW "EXO4" 2
+START @1
+END @FIN "VALID"
+
+FROM @1
+'X,'_ 'X,'_ R,S @2
+'_,'_ L,S @4
+
+FROM @2
+'X,'_ 'X,'_ R,S @3
+'_,'_ L,S @4
+
+FROM @3
+'X,'_ 'X,'L R,R @1
+'_,'_ L,S @4
+
+FROM @4
+'X,'_ L,S @5
+'_,'_ R,S @7
+
+FROM @5
+'X,'_ L,S @6
+'_,'_ R,S @7
+
+FROM @6
+'X,'_ 'X,'M L,R @4
+'_,'_ '_,'M R,R @7
+
+FROM @7
+'X,'_ 'X,'N R,R @8
+'_,'_ S,S @FIN
+
+FROM @8
+'X,'_ R,S @9
+'_,'_ S,S @FIN
+
+FROM @9
+'X,'_ R,S @7
+'_,'_ S,S @FIN

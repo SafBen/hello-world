@@ -1,0 +1,108 @@
+# Mini Projet 1 - Les machines de Turing
+# FRANCIS Anas
+# N° Etudiant 21901087
+# © Sept 2020 FRANCIS Anas. All right reserved
+
+NEW "MINI_PROJET_EXO1" 1
+START @0
+END @18 "VALID"
+
+FROM @0
+'X 'N L @1
+'_ R @3
+
+FROM @1
+'X 'M L @2
+'_ R @3
+
+FROM @2
+'X 'L L @0
+'_ R @3
+
+FROM @3
+'Y R
+'L R
+'M R
+'N 'Y L @4
+'_ L @7
+
+FROM @4
+'Y L
+'L L
+'M L
+'_ L @5
+
+FROM @5
+'N L
+'_ 'N R @6
+
+FROM @6
+'N R
+'_ R @3
+
+FROM @7
+'L L
+'M L
+'Y L
+'_ R @8
+
+FROM @8
+'Z R
+'L R
+'Y R
+'M 'Z L @9
+'_ L @12
+
+FROM @9
+'Y L
+'Z L
+'L L
+'_ L @10
+
+FROM @10
+'N L
+'M L
+'_ 'M R @11
+
+FROM @11
+'N R
+'M R
+'_ R @8
+
+FROM @12
+'L L
+'Z L
+'Y L
+'_ R @13
+
+FROM @13
+'A R
+'Z R
+'Y R
+'_ L @17
+'L 'A L @14
+
+FROM @14
+'Y L
+'Z L
+'A L
+'_ L @15
+
+FROM @15
+'N L
+'L L
+'M L
+'_ 'L R @16
+
+FROM @16
+'M R
+'N R
+'L R
+'_ R @13
+
+FROM @17
+'Y '_ L
+'A '_ L
+'Z '_ L
+'_ L @18
+

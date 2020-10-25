@@ -1,0 +1,445 @@
+# Mini-projet 1
+# Safwane Benidir
+
+# Exercice 1
+
+NEW "EXO3" 1
+START @BEGIN
+END @FIN "VALID"
+
+FROM @BEGIN
+'X L @CONGRU1
+'_ R @PAIR
+
+
+FROM @CONGRU1
+'X L @CONGRU0
+'_ R @PAIR
+
+FROM @CONGRU0
+'X 'K L @BEGIN
+'_ R @PAIR
+
+FROM @PAIR
+'X R
+'P R
+'K 'P R @IMPAIR
+'_ L @ADD0
+
+FROM @IMPAIR
+'X R
+'P R
+'K R @PAIR
+'_ L @ADD1
+
+FROM @ADD0
+'0 L
+'1 L
+'X L
+'K L
+'P L
+'_ '0 R @BACK
+
+
+FROM @ADD1
+'0 L
+'1 L
+'X L
+'K L
+'P L
+'_ '1 R @BACK
+
+FROM @BACK
+'P S @T
+'X R
+'0 R
+'1 R
+'_ L @NM
+
+FROM @NM
+'X 'N L @M
+'A 'N L @M
+
+FROM @M
+'X 'M L @F
+'0 '_ R @FIN
+
+FROM @F
+'0 '_ R @FIN
+'L S @FIN
+
+FROM @T
+'X R
+'K 'P R @IMPAIR
+'P R
+'_ L @T2
+
+FROM @T2
+'X L
+'K 'X L
+'P 'X L
+'0 S @0
+'1 S @0
+
+FROM @0
+'0 '1 L
+'1 '0 R @1
+'_ R @1
+
+FROM @1
+'0 R
+'1 R
+'X 'L L @2
+
+FROM @2
+'X L
+'0 L
+'1 L
+'_ R @3
+'L L @6
+
+FROM @3
+'0 '_ R @4
+'1 '_ R @5
+
+FROM @4
+'0 R
+'1 R
+'L R
+'X '0 L @2
+
+FROM @5
+'0 R
+'1 R
+'L R
+'X '1 L @2
+
+FROM @6
+'1 L @2
+'0 L @2
+'_ R @7
+
+FROM @7
+'L R
+'0 R
+'1 R
+'X 'A L @8
+
+FROM @8
+'0 L
+'1 L
+'L R @9
+'X R @9
+
+FROM @9
+'0 'X R @10
+'1 'X R @11
+'A R @15
+
+FROM @10
+'A R
+'0 R
+'1 R
+'X '0 L @12
+'_ L @NM
+
+FROM @11
+'A R
+'0 R
+'1 R
+'X '1 L @12
+
+FROM @12
+'A L
+'0 L
+'1 L
+'X R @9
+
+FROM @13
+'X L
+'0 L
+'1 L
+'A L
+'L R @14
+
+FROM @14
+'X 'L R @15
+'A 'X R @18
+
+FROM @15
+'A 'X R @18
+'X R @15BIS
+'0 R @16BIS
+'1 R @16
+
+FROM @15BIS
+'A R
+'X R
+'0 R @16BIS
+'1 R @16
+
+FROM @16BIS
+'0 R
+'1 R @16
+'_ L @NETTOYER
+'X S @NETTOYER
+
+FROM @16
+'1 R
+'0 R
+'_ L @17
+'X L @17
+
+FROM @17
+'0 '1 L
+'1 '0 L @13
+'L S @NETTOYER
+'X S @NETTOYER
+
+FROM @18
+'1 R
+'0 R
+'X 'A L @8
+
+
+FROM @NETTOYER
+'A 'X L
+'0 'X L
+'X L
+'L R @DIV_2_K
+
+FROM @DIV_2_K
+'X 'K R @DIV_2_X
+'_ L @PAIR_2
+
+FROM @DIV_2_X
+'X R @DIV_2_K
+'_ L @PAIR_2
+
+
+FROM @PAIR_2
+'P L
+'X L
+'K 'P L @IMPAIR_2
+'L R @ADD0_2
+
+FROM @IMPAIR_2
+'P L
+'X L
+'K L @PAIR_2
+'L R @ADD1_2
+
+FROM @ADD0_2
+'0 R
+'1 R
+'P R
+'X R
+'K R
+'_ '0 L @BACK_2
+
+FROM @ADD1_2
+'0 R
+'1 R
+'X R
+'P R
+'K R
+'_ '1 L @BACK_2
+
+FROM @BACK_2
+'P S @T_2
+'X L
+'0 L
+'1 L
+
+FROM @T_2
+'K 'P L @IMPAIR_2
+'X L
+'P L
+'L R @INVERSE
+
+FROM @INVERSE
+'X R
+'P 'X R
+'K 'X R
+'0 S @2_0
+'1 S @2_0
+
+
+
+FROM @2_0
+'0 '1 R
+'1 '0 L @2_1
+'_ L @2_1
+
+FROM @2_1
+'0 L
+'1 L
+'X 'N R @2_2BIS
+
+FROM @2_2BIS
+'1 R
+'0 R
+'_ L @SUPPR
+
+FROM @SUPPR
+'0 '_ L
+'1 L @NO_SUPPR
+
+FROM @NO_SUPPR
+'0 L
+'1 L
+'N R @2_2
+
+
+FROM @2_2
+'X R
+'0 R
+'1 R
+'_ L @2_3
+'N R @2_6
+
+FROM @2_3
+'0 '_ L @2_4
+'1 '_ L @2_5
+
+FROM @2_4
+'0 L
+'1 L
+'N L
+'X '0 R @2_2
+
+FROM @2_5
+'0 L
+'1 L
+'N L
+'X '1 R @2_2
+
+FROM @2_6
+'1 R @2_2
+'0 R @2_2
+'_ L @2_7
+
+FROM @2_7
+'N L
+'0 L
+'1 L
+'X 'A R @2_8
+
+FROM @2_8
+'0 R
+'1 R
+'N L @2_9
+'X L @2_9
+
+FROM @2_9
+'0 'X L @2_10
+'1 'X L @2_11
+'A L @2_15
+
+FROM @2_10
+'A L
+'0 L
+'1 L
+'L R @2_10BIS
+'X '0 R @2_12
+'_ R @2_NM
+
+FROM @2_10BIS
+'A 'M R
+'1 'M R
+'0 'M R
+'X 'N R
+'N S @FIN
+
+FROM @2_11
+'A L
+'0 L
+'1 L
+'X '1 R @2_12
+'L R @2_11BIS
+
+FROM @2_11BIS
+'X 'M R
+'A 'M R
+'N L @2_11BIS_FIN
+
+FROM @2_11BIS_FIN
+'M 'N S @FIN
+
+FROM @2_12
+'A R
+'0 R
+'1 R
+'X L @2_9
+
+FROM @2_13
+'X R
+'0 R
+'1 R
+'A R
+'N L @2_14
+
+FROM @2_14
+'X 'N L @2_15
+'A 'X L @2_18
+
+FROM @2_15
+'A 'X L @DIMINUER
+'X L @2_15BIS
+'0 L @2_16BIS
+'1 L @2_16
+
+FROM @DIMINUER
+'0 'X L
+'1 L @2_18
+'L R @DERNIER_M_BIS
+'X L
+
+FROM @DERNIER_M_BIS
+'X 'M R
+'N S @FIN
+
+
+FROM @2_15BIS
+'A L
+'X L
+'0 L @2_16BIS
+'1 L @2_16
+
+FROM @2_16BIS
+'0 L
+'1 L @2_16
+'L R @2_NETTOYER
+'X S @2_NETTOYER
+
+FROM @2_16
+'1 L
+'0 L
+'L R @2_17
+'X R @2_17
+
+FROM @2_17
+'0 '1 R
+'1 '0 R @2_13
+'N S @2_NETTOYER
+'X S @2_NETTOYER
+
+FROM @2_18
+'1 L
+'0 L
+'X 'A R @2_8
+
+FROM @2_NETTOYER
+'1 'M R
+'0 'M R
+'X 'M R
+'N L @DERNIER_M
+'A 'M R
+
+FROM @DERNIER_M
+'M L
+'1 'M L
+'0 'M L
+'X 'M L
+'A 'M L
+'L S @FIN

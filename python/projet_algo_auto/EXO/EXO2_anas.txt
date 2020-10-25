@@ -1,0 +1,77 @@
+NEW "EXO2" 1
+START @15
+END @13 "VALID"
+FROM @15
+'X 'N L @16
+FROM @16
+'_ R @13
+'X S @1
+FROM @0
+'X 'N L @1
+'_ R @3
+FROM @1
+'X L @2
+'_ R @3
+FROM @2
+'X 'L L @0
+'_ R @3
+FROM @3
+'L R
+'N R
+'X R
+'_ L @4
+FROM @4
+'X L
+'L L
+'Y L
+'N 'Y R @5
+'_ R @7
+FROM @5
+'Y R
+'L R
+'X R
+'N L @6
+'_ L @6
+FROM @6
+'Y 'N L @4
+'L 'N L @4
+'X 'N L @4
+FROM @7
+'L R
+'X R
+'Y R
+'A R
+'M R
+'N 'A L @14
+'_ L @8
+FROM @14
+'A L
+'M L
+'L 'M R @7
+'X 'M R @7
+'Y 'M R @7
+FROM @8
+'A 'N L
+'M L
+'Y L
+'L L
+'X L
+'_ R @9
+FROM @9
+'Y S @10
+'X S @11
+'L S @11
+'M R @12
+FROM @10
+'Y 'L R
+'L R
+'X 'L R
+'M 'L S @13
+FROM @11
+'Y 'L R
+'L R
+'X 'L R
+'M S @13
+FROM @12
+'M L @10
+'N S @13

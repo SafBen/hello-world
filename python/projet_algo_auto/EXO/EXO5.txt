@@ -1,0 +1,39 @@
+NEW "EXO5" 1
+START @PAIR
+END @FIN "VALID"
+
+FROM @PAIR
+'X R
+'0 'X R @IMPAIR
+'1 'X R @IMPAIR
+'_ L @ADD0
+
+FROM @IMPAIR
+'X R
+'0 R @PAIR
+'1 R @PAIR
+'_ L @ADD1
+
+FROM @ADD0
+'0 L
+'1 L
+'X L
+'_ '0 R @BACK
+
+
+FROM @ADD1
+'0 L
+'1 L
+'X L
+'_ '1 R @BACK
+
+FROM @BACK
+'X S @T
+'0 R
+'1 R
+
+FROM @T
+'0 'X R @IMPAIR
+'1 'X R @IMPAIR
+'X R
+'_ S @FIN

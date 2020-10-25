@@ -1,0 +1,44 @@
+# Mini-projet 1
+# Safwane Benidir
+
+# Exercice 4
+
+NEW "EXO4" 2
+START @1
+END @FIN "VALID"
+
+FROM @1
+'X,'_ 'X,'_ R,S @2
+'_,'_ L,S @4
+
+FROM @2
+'X,'_ 'X,'_ R,S @3
+'_,'_ L,S @4
+
+FROM @3
+'X,'_ 'X,'L R,R @1
+'_,'_ L,S @4
+
+FROM @4
+'X,'_ L,S @5
+'_,'_ R,S @7
+
+FROM @5
+'X,'_ 'X,'M L,R @6
+'_,'_ R,S @7
+
+FROM @6
+'X,'_ L,S @4
+'_,'_ R,S @7
+
+FROM @7
+'X,'_ 'X,'N R,R @8
+'_,'_ S,S @FIN
+
+FROM @8
+'X,'_ R,S @9
+'_,'_ S,S @FIN
+
+FROM @9
+'X,'_ R,S @7
+'_,'_ S,S @FIN
