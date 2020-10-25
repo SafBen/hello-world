@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Train.dir/main.cpp.o CMakeFiles/Train.dir/Rectangle.cpp.o CMakeFiles/Train.dir/Segment.cpp.o  -o Train 

@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/untitled.dir/fonct_map.c.o  -o untitled 

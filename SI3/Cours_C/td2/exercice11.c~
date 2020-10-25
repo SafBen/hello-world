@@ -1,9 +1,0 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-int main(void) {
-  int celsius;
-  scanf("%d",&celsius);
-  printf("%d\n,floor(9*celsius/5+32));
-  return EXIT_SUCCESS;
-}

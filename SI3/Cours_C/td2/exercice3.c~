@@ -1,9 +1,0 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-int main(void) {
-  int x,y,z;
-  scanf("%d%%d%%d", &x,&y,&z);
-  printf("%d\n", y);
-  return EXIT_SUCCESS;
-}

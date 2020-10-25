@@ -1,3 +1,0 @@
-/home/safwane/Bureau/C++/TDs/TD2/td2_clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/safwane/Bureau/C++/TDs/TD2/td2_clion/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/safwane/Bureau/C++/TDs/TD2/td2_clion/cmake-build-debug/CMakeFiles/td2_clion.dir

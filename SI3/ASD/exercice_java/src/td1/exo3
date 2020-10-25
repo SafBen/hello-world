@@ -1,8 +1,0 @@
-0.5ms for size 100
-
-for size 500?
-
-a) linear => 0.5*5=2.5ms
-b) O(N log(N)) => 0.5*(5*log(5))
-c) quadratic => 0.5*25 = 12.5ms
-d) cubic => 0.5*125 = 62.5ms

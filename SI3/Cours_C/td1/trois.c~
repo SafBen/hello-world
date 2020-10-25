@@ -1,7 +1,0 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-int main (void) {
-  printf("Le chiffre trois : %d,\nd virgule : %f\n",3, 3.0);
-  return 0
-    }

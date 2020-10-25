@@ -1,7 +1,0 @@
-#include <stdlib.h>
-#include <sdtio.h>
-
-void trim(const char s1[], char s2[]){
-  int i=0;
-  while (isspace(s1[i])) i++;
-  

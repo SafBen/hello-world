@@ -1,8 +1,0 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(){
-  char s1[5] = 'toto';
-  printf("%c",s1);
-  return EXIT_SUCCESS;
-}
