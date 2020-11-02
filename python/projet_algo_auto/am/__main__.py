@@ -92,6 +92,8 @@ class Simulation:
             w, m = self.tape.head, (0,)*self.am.nb_tapes
             self.state, self.result = self.am.undefined_state
         self.tape.step(w, m)
+        if self.steps==0%10000000 and self.steps!=0:
+            print("steps = ",self.steps)
         self.steps += 1
 
     def back_step(self):
@@ -125,13 +127,11 @@ def simulation(am, tape,  result_only=False, statistics=False):
         print('By states:')
         for r, s in res_s:
             print('%12s' % s, ':%4d' % r)
-    for i in range(am.nb_tapes):
-        print(''.join(sim.tape.stacks[0][i]), '<' + sim.tape.head[i] +'>', ''.join(reversed(sim.tape.stacks[1][i])), sep='')
     print(f"{sim.result} in {sim.steps} steps.")
     sys.stdout = open('Size/size.txt', 'a')
     print(sim.steps)
-    sys.stdout = open('Result/result.txt', 'a')
-    print(''.join(sim.tape.stacks[0][i]), sim.tape.head[i], ''.join(reversed(sim.tape.stacks[1][i])), sep='')
+    #sys.stdout = open('Result/result.txt', 'a')
+    #print(''.join(sim.tape.stacks[0][i]), sim.tape.head[i], ''.join(reversed(sim.tape.stacks[1][i])), sep='')
 
 
 def draw(am, name, file=None):

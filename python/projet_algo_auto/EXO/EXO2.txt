@@ -1,39 +1,83 @@
-# Mini-projet 1
-# Safwane Benidir
-
-# Exercice 2
-
 NEW "EXO2" 1
-START @1
-END @FIN "VALID"
+START @15
+END @13 "VALID"
+
+FROM @15
+'X 'N L @16
+
+FROM @16
+'_ R @13
+'X S @1
+
+FROM @0
+'X 'N L @1
+'_ R @3
 
 FROM @1
-'X 'Z R
-'_ L
-'Z 'N L @2
-'Y 'L R @4
-'M S @FIN
+'X 'A L @2
+'_ R @3
 
 FROM @2
-'M L
-'Z 'M L @3
-'X 'M L @3
-'Y 'M L @3
-'_ S @FIN
-'L S @FIN
+'X 'A L @0
+'_ R @3
 
 FROM @3
-'Z 'Y L
-'X 'Y L
-'_ R @1
-'L R @1
-'A 'N L @4
-'Y 'X R
-'M 'A R
-'N L
+'N R
+'A 'X R
+'_ L @4
 
 FROM @4
-'M S @FIN
-'Y 'X R @3
-'A 'M L
-'X 'M L @2
+'X 'E L
+'Y 'F L
+'N 'Y R @5
+'_ R @7
+
+FROM @5
+'E 'X R
+'F 'Y R
+'N L @6
+'_ L @6
+
+FROM @6
+'Y 'N L @4
+'X 'N L @4
+'I S @10
+'J S @11
+'M R @12
+
+FROM @7
+'E 'G R
+'F 'H R
+'A R
+'M R
+'N 'A L @14
+'_ L @8
+
+FROM @14
+'A L
+'M L
+'G 'M R @7
+'H 'M R @7
+
+FROM @8
+'A 'N L
+'M L
+'H 'I L
+'G 'J L
+'_ R @6
+
+FROM @10
+'I 'L R
+'J 'L R
+'M 'L S @13
+
+
+FROM @11
+'I 'L R
+'J 'L R
+'M S @13
+
+
+FROM @12
+'M L @10
+'N S @13

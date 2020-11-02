@@ -8,18 +8,22 @@ START @1
 END @FIN "VALID"
 
 FROM @1
-'X 'N L @2
+'X 'Z R
+'_ L
+'Z 'N L @2
 'Y 'L R @4
 'M S @FIN
 
 FROM @2
 'M L
+'Z 'M L @3
 'X 'M L @3
 'Y 'M L @3
 '_ S @FIN
 'L S @FIN
 
 FROM @3
+'Z 'Y L
 'X 'Y L
 '_ R @1
 'L R @1

@@ -1,82 +1,42 @@
+
 # Mini-projet 1
 # Safwane Benidir
 
 # Exercice 1
 
 NEW "EXO1" 1
-START @BEGIN
+START @1
 END @FIN "VALID"
 
-FROM @BEGIN
-'X 'A R @1A
-'_ S @REVENIR_L
+FROM @1
+'X 'A R @2
+'_ L @3
+'B 'A R
 
-FROM @1A
-'X 'A R @2A
-'_ L @REVENIR_L
-
-FROM @2A
-'X 'A L @3A
-'_ L @REVENIR_L
-
-FROM @3A
-'A L
-'L R @METTRE_L
-'_ R @METTRE_L
-
-FROM @METTRE_L
-'A 'L R @REPARTIR_L
-
-FROM @REPARTIR_L
-'A R
-'X S @BEGIN
-'_ L @SECOND_PART
-
-
-FROM @REVENIR_L
-'A L
-'L R @SECOND_PART
-'_ R @1_OU_2_A
-
-FROM @1_OU_2_A
-'A R @T
-
-FROM @T
-'A 'N L @LAST_M
-'_ L @LAST_N
-
-FROM @LAST_M
-'A 'M S @FIN2
-
-FROM @LAST_N
-'A 'N S @FIN3
-
-FROM @FIN2
+FROM @2
+'X 'A S @0
+'_ L @2
+'A 'N L @7
 'M S @FIN
-
-FROM @FIN3
+'C 'M R @7
 'N S @FIN
 
-FROM @SECOND_PART
-'A R
-'_ L @METTRE_N
-'N L @METTRE_N
+FROM @0
+'A R @1
 
-FROM @METTRE_N
-'A 'N L @TEST_DERNIER_M
+FROM @3
+'X 'B L
 
-FROM @TEST_DERNIER_M
-'A L @REPARTIR_GAUCHE
-'M S @FIN
+'A 'B L
+'_ R @3
+'L R @3
+'B 'L R @1
 
-FROM @REPARTIR_GAUCHE
-'A L
-'M R @METTRE_M
-'L R @METTRE_M
 
-FROM @METTRE_M
-'A 'M R @TEST_DERNIER_N
-
-FROM @TEST_DERNIER_N
-'N S @FIN
-'A R @SECOND_PART
+FROM @7
+'A 'C L
+'M R @2
+'L R @2
+'_ R @2
+'C 'A R
+'N L @2

@@ -17,7 +17,7 @@ def plot(exo,n_iteration,pas,nb=""): # exo = numero de l'exercice
         y = 3*(x+1)
     plt.plot(x, y,"-g",label="fonction")
     y=7*x*np.log2(x)
-    plt.plot(x, y, "-*", label="fonction x*log1.5(x)")
+    plt.plot(x, y, "-*", label="fonction 7*x*np.log2(x)")
     plt.legend(loc="upper left")
     plt.show()
 
